@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gb_actual = new System.Windows.Forms.GroupBox();
             this.txt_evento = new System.Windows.Forms.TextBox();
             this.txt_hora = new System.Windows.Forms.TextBox();
@@ -97,6 +97,11 @@
             this.lbl_demora_menu_2 = new System.Windows.Forms.Label();
             this.txt_demora_menu_1 = new System.Windows.Forms.TextBox();
             this.lbl_demora_menu_1 = new System.Windows.Forms.Label();
+            this.gb_horarios = new System.Windows.Forms.GroupBox();
+            this.txt_cierre = new System.Windows.Forms.TextBox();
+            this.lbl_cierre = new System.Windows.Forms.Label();
+            this.txt_apertura = new System.Windows.Forms.TextBox();
+            this.lbl_apertura = new System.Windows.Forms.Label();
             this.gb_actual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_simulaciones)).BeginInit();
             this.gb_cantidades.SuspendLayout();
@@ -106,6 +111,7 @@
             this.gb_menus.SuspendLayout();
             this.gb_grupos.SuspendLayout();
             this.gb_llegadas.SuspendLayout();
+            this.gb_horarios.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb_actual
@@ -163,9 +169,10 @@
             this.btn_detener.Location = new System.Drawing.Point(870, 62);
             this.btn_detener.Name = "btn_detener";
             this.btn_detener.Size = new System.Drawing.Size(75, 23);
-            this.btn_detener.TabIndex = 24;
+            this.btn_detener.TabIndex = 18;
             this.btn_detener.Text = "Detener";
             this.btn_detener.UseVisualStyleBackColor = true;
+            this.btn_detener.Click += new System.EventHandler(this.btn_detener_Click);
             // 
             // dg_simulaciones
             // 
@@ -178,14 +185,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dg_simulaciones.CausesValidation = false;
             this.dg_simulaciones.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_simulaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_simulaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dg_simulaciones.ColumnHeadersHeight = 41;
             this.dg_simulaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dg_simulaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -223,7 +230,7 @@
             this.dg_simulaciones.ShowCellToolTips = false;
             this.dg_simulaciones.ShowEditingIcon = false;
             this.dg_simulaciones.ShowRowErrors = false;
-            this.dg_simulaciones.Size = new System.Drawing.Size(801, 421);
+            this.dg_simulaciones.Size = new System.Drawing.Size(801, 510);
             this.dg_simulaciones.TabIndex = 23;
             // 
             // reloj
@@ -443,9 +450,10 @@
             this.btn_simular.Location = new System.Drawing.Point(870, 28);
             this.btn_simular.Name = "btn_simular";
             this.btn_simular.Size = new System.Drawing.Size(75, 23);
-            this.btn_simular.TabIndex = 21;
+            this.btn_simular.TabIndex = 17;
             this.btn_simular.Text = "Simular";
             this.btn_simular.UseVisualStyleBackColor = true;
+            this.btn_simular.Click += new System.EventHandler(this.btn_simular_Click);
             // 
             // gb_cantidades
             // 
@@ -465,7 +473,7 @@
             this.txt_hasta.Location = new System.Drawing.Point(120, 48);
             this.txt_hasta.Name = "txt_hasta";
             this.txt_hasta.Size = new System.Drawing.Size(37, 20);
-            this.txt_hasta.TabIndex = 5;
+            this.txt_hasta.TabIndex = 2;
             this.txt_hasta.Text = "100";
             // 
             // txt_desde
@@ -473,7 +481,7 @@
             this.txt_desde.Location = new System.Drawing.Point(120, 23);
             this.txt_desde.Name = "txt_desde";
             this.txt_desde.Size = new System.Drawing.Size(37, 20);
-            this.txt_desde.TabIndex = 4;
+            this.txt_desde.TabIndex = 1;
             this.txt_desde.Text = "1";
             // 
             // lbl_hasta
@@ -514,6 +522,7 @@
             this.txt_permanencia_a.Enabled = false;
             this.txt_permanencia_a.Location = new System.Drawing.Point(210, 52);
             this.txt_permanencia_a.Name = "txt_permanencia_a";
+            this.txt_permanencia_a.ReadOnly = true;
             this.txt_permanencia_a.Size = new System.Drawing.Size(64, 20);
             this.txt_permanencia_a.TabIndex = 11;
             // 
@@ -531,6 +540,7 @@
             this.txt_no_atendidos_a.Enabled = false;
             this.txt_no_atendidos_a.Location = new System.Drawing.Point(116, 52);
             this.txt_no_atendidos_a.Name = "txt_no_atendidos_a";
+            this.txt_no_atendidos_a.ReadOnly = true;
             this.txt_no_atendidos_a.Size = new System.Drawing.Size(64, 20);
             this.txt_no_atendidos_a.TabIndex = 8;
             // 
@@ -548,6 +558,7 @@
             this.txt_atendidos_a.Enabled = false;
             this.txt_atendidos_a.Location = new System.Drawing.Point(20, 52);
             this.txt_atendidos_a.Name = "txt_atendidos_a";
+            this.txt_atendidos_a.ReadOnly = true;
             this.txt_atendidos_a.Size = new System.Drawing.Size(64, 20);
             this.txt_atendidos_a.TabIndex = 5;
             // 
@@ -566,7 +577,7 @@
             this.gb_comida.Controls.Add(this.lbl_comida_varianza);
             this.gb_comida.Controls.Add(this.txt_comida_media);
             this.gb_comida.Controls.Add(this.lbl_comida_media);
-            this.gb_comida.Location = new System.Drawing.Point(12, 439);
+            this.gb_comida.Location = new System.Drawing.Point(12, 530);
             this.gb_comida.Name = "gb_comida";
             this.gb_comida.Size = new System.Drawing.Size(125, 85);
             this.gb_comida.TabIndex = 18;
@@ -578,7 +589,7 @@
             this.txt_comida_varianza.Location = new System.Drawing.Point(82, 48);
             this.txt_comida_varianza.Name = "txt_comida_varianza";
             this.txt_comida_varianza.Size = new System.Drawing.Size(37, 20);
-            this.txt_comida_varianza.TabIndex = 3;
+            this.txt_comida_varianza.TabIndex = 16;
             this.txt_comida_varianza.Text = "20";
             // 
             // lbl_comida_varianza
@@ -595,7 +606,7 @@
             this.txt_comida_media.Location = new System.Drawing.Point(82, 22);
             this.txt_comida_media.Name = "txt_comida_media";
             this.txt_comida_media.Size = new System.Drawing.Size(37, 20);
-            this.txt_comida_media.TabIndex = 1;
+            this.txt_comida_media.TabIndex = 15;
             this.txt_comida_media.Text = "60";
             // 
             // lbl_comida_media
@@ -613,7 +624,7 @@
             this.gb_mozo.Controls.Add(this.lbl_pedido);
             this.gb_mozo.Controls.Add(this.txt_carta);
             this.gb_mozo.Controls.Add(this.lbl_carta);
-            this.gb_mozo.Location = new System.Drawing.Point(12, 348);
+            this.gb_mozo.Location = new System.Drawing.Point(12, 439);
             this.gb_mozo.Name = "gb_mozo";
             this.gb_mozo.Size = new System.Drawing.Size(125, 85);
             this.gb_mozo.TabIndex = 17;
@@ -625,7 +636,7 @@
             this.txt_pedido.Location = new System.Drawing.Point(82, 48);
             this.txt_pedido.Name = "txt_pedido";
             this.txt_pedido.Size = new System.Drawing.Size(37, 20);
-            this.txt_pedido.TabIndex = 3;
+            this.txt_pedido.TabIndex = 14;
             this.txt_pedido.Text = "2";
             // 
             // lbl_pedido
@@ -642,7 +653,7 @@
             this.txt_carta.Location = new System.Drawing.Point(82, 22);
             this.txt_carta.Name = "txt_carta";
             this.txt_carta.Size = new System.Drawing.Size(37, 20);
-            this.txt_carta.TabIndex = 1;
+            this.txt_carta.TabIndex = 13;
             this.txt_carta.Text = "1";
             // 
             // lbl_carta
@@ -664,7 +675,7 @@
             this.gb_menus.Controls.Add(this.lbl_prob_menu_2);
             this.gb_menus.Controls.Add(this.txt_menu_1);
             this.gb_menus.Controls.Add(this.lbl_prob_menu_1);
-            this.gb_menus.Location = new System.Drawing.Point(12, 194);
+            this.gb_menus.Location = new System.Drawing.Point(12, 285);
             this.gb_menus.Name = "gb_menus";
             this.gb_menus.Size = new System.Drawing.Size(125, 148);
             this.gb_menus.TabIndex = 16;
@@ -676,8 +687,9 @@
             this.txt_menu_2.Location = new System.Drawing.Point(82, 48);
             this.txt_menu_2.Name = "txt_menu_2";
             this.txt_menu_2.Size = new System.Drawing.Size(37, 20);
-            this.txt_menu_2.TabIndex = 3;
+            this.txt_menu_2.TabIndex = 10;
             this.txt_menu_2.Text = "0.5";
+            this.txt_menu_2.TextChanged += new System.EventHandler(this.txt_menu_2_TextChanged);
             // 
             // lbl_prob_menu_2
             // 
@@ -693,8 +705,9 @@
             this.txt_menu_1.Location = new System.Drawing.Point(82, 22);
             this.txt_menu_1.Name = "txt_menu_1";
             this.txt_menu_1.Size = new System.Drawing.Size(37, 20);
-            this.txt_menu_1.TabIndex = 1;
+            this.txt_menu_1.TabIndex = 9;
             this.txt_menu_1.Text = "0.5";
+            this.txt_menu_1.TextChanged += new System.EventHandler(this.txt_menu_1_TextChanged);
             // 
             // lbl_prob_menu_1
             // 
@@ -711,7 +724,7 @@
             this.gb_grupos.Controls.Add(this.lbl_grupos_4);
             this.gb_grupos.Controls.Add(this.txt_grupos_2);
             this.gb_grupos.Controls.Add(this.lbl_grupos_2);
-            this.gb_grupos.Location = new System.Drawing.Point(12, 103);
+            this.gb_grupos.Location = new System.Drawing.Point(12, 194);
             this.gb_grupos.Name = "gb_grupos";
             this.gb_grupos.Size = new System.Drawing.Size(125, 85);
             this.gb_grupos.TabIndex = 15;
@@ -723,8 +736,9 @@
             this.txt_grupos_4.Location = new System.Drawing.Point(82, 48);
             this.txt_grupos_4.Name = "txt_grupos_4";
             this.txt_grupos_4.Size = new System.Drawing.Size(37, 20);
-            this.txt_grupos_4.TabIndex = 3;
+            this.txt_grupos_4.TabIndex = 8;
             this.txt_grupos_4.Text = "0.5";
+            this.txt_grupos_4.TextChanged += new System.EventHandler(this.txt_grupos_4_TextChanged);
             // 
             // lbl_grupos_4
             // 
@@ -740,8 +754,9 @@
             this.txt_grupos_2.Location = new System.Drawing.Point(82, 22);
             this.txt_grupos_2.Name = "txt_grupos_2";
             this.txt_grupos_2.Size = new System.Drawing.Size(37, 20);
-            this.txt_grupos_2.TabIndex = 1;
+            this.txt_grupos_2.TabIndex = 7;
             this.txt_grupos_2.Text = "0.5";
+            this.txt_grupos_2.TextChanged += new System.EventHandler(this.txt_grupos_2_TextChanged);
             // 
             // lbl_grupos_2
             // 
@@ -758,7 +773,7 @@
             this.gb_llegadas.Controls.Add(this.lbl_cola_max);
             this.gb_llegadas.Controls.Add(this.txt_llegadas);
             this.gb_llegadas.Controls.Add(this.lbl_llegadas);
-            this.gb_llegadas.Location = new System.Drawing.Point(197, 12);
+            this.gb_llegadas.Location = new System.Drawing.Point(12, 103);
             this.gb_llegadas.Name = "gb_llegadas";
             this.gb_llegadas.Size = new System.Drawing.Size(125, 85);
             this.gb_llegadas.TabIndex = 14;
@@ -770,7 +785,7 @@
             this.txt_llegadas.Location = new System.Drawing.Point(82, 22);
             this.txt_llegadas.Name = "txt_llegadas";
             this.txt_llegadas.Size = new System.Drawing.Size(37, 20);
-            this.txt_llegadas.TabIndex = 1;
+            this.txt_llegadas.TabIndex = 5;
             this.txt_llegadas.Text = "10";
             // 
             // lbl_llegadas
@@ -787,7 +802,7 @@
             this.txt_cola_max.Location = new System.Drawing.Point(82, 47);
             this.txt_cola_max.Name = "txt_cola_max";
             this.txt_cola_max.Size = new System.Drawing.Size(37, 20);
-            this.txt_cola_max.TabIndex = 3;
+            this.txt_cola_max.TabIndex = 6;
             this.txt_cola_max.Text = "1";
             // 
             // lbl_cola_max
@@ -804,7 +819,7 @@
             this.txt_demora_menu_2.Location = new System.Drawing.Point(82, 102);
             this.txt_demora_menu_2.Name = "txt_demora_menu_2";
             this.txt_demora_menu_2.Size = new System.Drawing.Size(37, 20);
-            this.txt_demora_menu_2.TabIndex = 7;
+            this.txt_demora_menu_2.TabIndex = 12;
             this.txt_demora_menu_2.Text = "15";
             // 
             // lbl_demora_menu_2
@@ -821,7 +836,7 @@
             this.txt_demora_menu_1.Location = new System.Drawing.Point(82, 76);
             this.txt_demora_menu_1.Name = "txt_demora_menu_1";
             this.txt_demora_menu_1.Size = new System.Drawing.Size(37, 20);
-            this.txt_demora_menu_1.TabIndex = 5;
+            this.txt_demora_menu_1.TabIndex = 11;
             this.txt_demora_menu_1.Text = "10";
             // 
             // lbl_demora_menu_1
@@ -833,11 +848,59 @@
             this.lbl_demora_menu_1.TabIndex = 4;
             this.lbl_demora_menu_1.Text = "Demora 1:";
             // 
+            // gb_horarios
+            // 
+            this.gb_horarios.Controls.Add(this.txt_cierre);
+            this.gb_horarios.Controls.Add(this.lbl_cierre);
+            this.gb_horarios.Controls.Add(this.txt_apertura);
+            this.gb_horarios.Controls.Add(this.lbl_apertura);
+            this.gb_horarios.Location = new System.Drawing.Point(197, 12);
+            this.gb_horarios.Name = "gb_horarios";
+            this.gb_horarios.Size = new System.Drawing.Size(125, 85);
+            this.gb_horarios.TabIndex = 26;
+            this.gb_horarios.TabStop = false;
+            this.gb_horarios.Text = "Horarios:";
+            // 
+            // txt_cierre
+            // 
+            this.txt_cierre.Location = new System.Drawing.Point(82, 48);
+            this.txt_cierre.Name = "txt_cierre";
+            this.txt_cierre.Size = new System.Drawing.Size(37, 20);
+            this.txt_cierre.TabIndex = 4;
+            this.txt_cierre.Text = "22:30";
+            // 
+            // lbl_cierre
+            // 
+            this.lbl_cierre.AutoSize = true;
+            this.lbl_cierre.Location = new System.Drawing.Point(17, 51);
+            this.lbl_cierre.Name = "lbl_cierre";
+            this.lbl_cierre.Size = new System.Drawing.Size(37, 13);
+            this.lbl_cierre.TabIndex = 2;
+            this.lbl_cierre.Text = "Cierre:";
+            // 
+            // txt_apertura
+            // 
+            this.txt_apertura.Location = new System.Drawing.Point(82, 22);
+            this.txt_apertura.Name = "txt_apertura";
+            this.txt_apertura.Size = new System.Drawing.Size(37, 20);
+            this.txt_apertura.TabIndex = 3;
+            this.txt_apertura.Text = "08:00";
+            // 
+            // lbl_apertura
+            // 
+            this.lbl_apertura.AutoSize = true;
+            this.lbl_apertura.Location = new System.Drawing.Point(17, 25);
+            this.lbl_apertura.Name = "lbl_apertura";
+            this.lbl_apertura.Size = new System.Drawing.Size(50, 13);
+            this.lbl_apertura.TabIndex = 0;
+            this.lbl_apertura.Text = "Apertura:";
+            // 
             // Tp7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 536);
+            this.ClientSize = new System.Drawing.Size(954, 625);
+            this.Controls.Add(this.gb_horarios);
             this.Controls.Add(this.gb_actual);
             this.Controls.Add(this.btn_detener);
             this.Controls.Add(this.dg_simulaciones);
@@ -851,6 +914,7 @@
             this.Controls.Add(this.gb_llegadas);
             this.Name = "Tp7";
             this.Text = "García Reyna, Facundo (63583)";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.gb_actual.ResumeLayout(false);
             this.gb_actual.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_simulaciones)).EndInit();
@@ -868,6 +932,8 @@
             this.gb_grupos.PerformLayout();
             this.gb_llegadas.ResumeLayout(false);
             this.gb_llegadas.PerformLayout();
+            this.gb_horarios.ResumeLayout(false);
+            this.gb_horarios.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -942,6 +1008,11 @@
         private System.Windows.Forms.Label lbl_demora_menu_1;
         private System.Windows.Forms.TextBox txt_cola_max;
         private System.Windows.Forms.Label lbl_cola_max;
+        private System.Windows.Forms.GroupBox gb_horarios;
+        private System.Windows.Forms.TextBox txt_cierre;
+        private System.Windows.Forms.Label lbl_cierre;
+        private System.Windows.Forms.TextBox txt_apertura;
+        private System.Windows.Forms.Label lbl_apertura;
     }
 }
 

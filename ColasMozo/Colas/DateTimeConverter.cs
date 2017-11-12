@@ -57,7 +57,7 @@ namespace Colas
 
             var ss = (int) (minutos % 1 * 60);
 
-            return $"{hh}:{mm.ToString().PadLeft(2,'0')}:{ss.ToString().PadLeft(2, '0')}";
+            return $"{hh.ToString().PadLeft(2, '0')}:{mm.ToString().PadLeft(2,'0')}:{ss.ToString().PadLeft(2, '0')}";
         }
 
         public static string DesdeHoras(decimal horas)
