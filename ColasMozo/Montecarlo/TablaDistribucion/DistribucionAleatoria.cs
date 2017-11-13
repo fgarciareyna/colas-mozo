@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace Montecarlo.TablaDistribucion
 {
     public class DistribucionAleatoria
     {
+        private readonly Random _random = new Random();
+
         public DistribucionAleatoria(IList<Probabilidad> valores)
         {
             Valores = valores ?? new List<Probabilidad>();
@@ -55,9 +56,7 @@ namespace Montecarlo.TablaDistribucion
 
         public double ObtenerValor()
         {
-            Thread.Sleep(20);
-
-            var random = new Random().NextDouble();
+            var random = _random.NextDouble();
 
             return ObtenerValor(random);
         }

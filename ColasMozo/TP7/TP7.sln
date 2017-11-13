@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumerosAleatorios", "..\Num
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Montecarlo", "..\Montecarlo\Montecarlo.csproj", "{1B73D065-A228-4D56-9622-987DD04524C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP4", "..\..\..\..\TP5\colas\Colas\TP4\TP4.csproj", "{EA51577F-3811-45C2-90F8-0DDDDC45D5FA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{1B73D065-A228-4D56-9622-987DD04524C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B73D065-A228-4D56-9622-987DD04524C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B73D065-A228-4D56-9622-987DD04524C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA51577F-3811-45C2-90F8-0DDDDC45D5FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA51577F-3811-45C2-90F8-0DDDDC45D5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA51577F-3811-45C2-90F8-0DDDDC45D5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA51577F-3811-45C2-90F8-0DDDDC45D5FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

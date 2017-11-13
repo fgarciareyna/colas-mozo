@@ -9,6 +9,12 @@ namespace Colas.Clientes
             Nombre = nombre;
             TiempoAtencion = 0;
         }
+        public Cliente(string nombre, int prioridad)
+        {
+            Nombre = nombre;
+            Prioridad = prioridad;
+            TiempoAtencion = 0;
+        }
 
         public void Llegar(DateTime horaLlegada)
         {
@@ -35,6 +41,11 @@ namespace Colas.Clientes
             Estado = $"En cola de {nombre}";
         }
 
+        public void CambiarPrioridad(int prioridad)
+        {
+            Prioridad = prioridad;
+        }
+
         public void Salir(DateTime horaSalida)
         {
             var ingreso = DateTimeConverter.EnMinutos(HoraLlegada);
@@ -57,6 +68,7 @@ namespace Colas.Clientes
         }
         
         public string Nombre { get; protected set; }
+        public int Prioridad { get; protected set; }
         public DateTime HoraLlegada { get; protected set; }
         public DateTime HoraInicioAtencion { get; protected set; }
         public string Estado { get; protected set; }

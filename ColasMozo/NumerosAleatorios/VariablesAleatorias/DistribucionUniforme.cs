@@ -12,7 +12,7 @@ namespace NumerosAleatorios.VariablesAleatorias
 
         public DistribucionUniforme(double a, double b)
         {
-            if (b <= a)
+            if (b < a)
                 throw new NotSupportedException("A debe ser menor que B");
 
             A = a;
@@ -22,7 +22,7 @@ namespace NumerosAleatorios.VariablesAleatorias
 
         public DistribucionUniforme(double a, double b, IGeneradorNumerosAleatorios generador)
         {
-            if (b <= a)
+            if (b < a)
                 throw new NotSupportedException("A debe ser menor que B");
 
             A = a;
