@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gb_actual = new System.Windows.Forms.GroupBox();
             this.txt_evento = new System.Windows.Forms.TextBox();
             this.txt_hora = new System.Windows.Forms.TextBox();
@@ -36,25 +36,6 @@
             this.lbl_hora = new System.Windows.Forms.Label();
             this.btn_detener = new System.Windows.Forms.Button();
             this.dg_simulaciones = new System.Windows.Forms.DataGridView();
-            this.reloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proxima_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cola_recepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_recepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximo_fin_recepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cola_balanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_balanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximo_fin_balanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cola_darsenas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_darsena_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximo_fin_darsena_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.atendidos_darsena_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_darsena_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximo_fin_darsena_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.atendidos_darsena_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_atendidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sin_atender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.permanencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_simular = new System.Windows.Forms.Button();
             this.gb_cantidades = new System.Windows.Forms.GroupBox();
             this.txt_hasta = new System.Windows.Forms.TextBox();
@@ -79,6 +60,10 @@
             this.txt_carta = new System.Windows.Forms.TextBox();
             this.lbl_carta = new System.Windows.Forms.Label();
             this.gb_menus = new System.Windows.Forms.GroupBox();
+            this.txt_demora_menu_2 = new System.Windows.Forms.TextBox();
+            this.lbl_demora_menu_2 = new System.Windows.Forms.Label();
+            this.txt_demora_menu_1 = new System.Windows.Forms.TextBox();
+            this.lbl_demora_menu_1 = new System.Windows.Forms.Label();
             this.txt_menu_2 = new System.Windows.Forms.TextBox();
             this.lbl_prob_menu_2 = new System.Windows.Forms.Label();
             this.txt_menu_1 = new System.Windows.Forms.TextBox();
@@ -89,19 +74,38 @@
             this.txt_grupos_2 = new System.Windows.Forms.TextBox();
             this.lbl_grupos_2 = new System.Windows.Forms.Label();
             this.gb_llegadas = new System.Windows.Forms.GroupBox();
-            this.txt_llegadas = new System.Windows.Forms.TextBox();
-            this.lbl_llegadas = new System.Windows.Forms.Label();
             this.txt_cola_max = new System.Windows.Forms.TextBox();
             this.lbl_cola_max = new System.Windows.Forms.Label();
-            this.txt_demora_menu_2 = new System.Windows.Forms.TextBox();
-            this.lbl_demora_menu_2 = new System.Windows.Forms.Label();
-            this.txt_demora_menu_1 = new System.Windows.Forms.TextBox();
-            this.lbl_demora_menu_1 = new System.Windows.Forms.Label();
+            this.txt_llegadas = new System.Windows.Forms.TextBox();
+            this.lbl_llegadas = new System.Windows.Forms.Label();
             this.gb_horarios = new System.Windows.Forms.GroupBox();
             this.txt_cierre = new System.Windows.Forms.TextBox();
             this.lbl_cierre = new System.Windows.Forms.Label();
             this.txt_apertura = new System.Windows.Forms.TextBox();
             this.lbl_apertura = new System.Windows.Forms.Label();
+            this.reloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proxima_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cola_local = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cola_mozo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mozo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mozo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cola_cocina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_cocina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_cocina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mesa_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mesa_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mesa_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mesa_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mesa_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mesa_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mesa_7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mesa_8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mesa_9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_mesa_10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_atendidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_perdidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.espera_promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_actual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_simulaciones)).BeginInit();
             this.gb_cantidades.SuspendLayout();
@@ -185,36 +189,40 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dg_simulaciones.CausesValidation = false;
             this.dg_simulaciones.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_simulaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_simulaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_simulaciones.ColumnHeadersHeight = 41;
             this.dg_simulaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dg_simulaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.reloj,
             this.evento,
             this.proxima_llegada,
-            this.cola_recepcion,
-            this.estado_recepcion,
-            this.proximo_fin_recepcion,
-            this.cola_balanza,
-            this.estado_balanza,
-            this.proximo_fin_balanza,
-            this.cola_darsenas,
-            this.estado_darsena_1,
-            this.proximo_fin_darsena_1,
-            this.atendidos_darsena_1,
-            this.estado_darsena_2,
-            this.proximo_fin_darsena_2,
-            this.atendidos_darsena_2,
+            this.cola_local,
+            this.cola_mozo,
+            this.estado_mozo,
+            this.proximo_fin_mozo,
+            this.cola_cocina,
+            this.estado_cocina,
+            this.proximo_fin_cocina,
+            this.estado_mesa_1,
+            this.estado_mesa_2,
+            this.estado_mesa_3,
+            this.estado_mesa_4,
+            this.estado_mesa_5,
+            this.estado_mesa_6,
+            this.estado_mesa_7,
+            this.estado_mesa_8,
+            this.estado_mesa_9,
+            this.estado_mesa_10,
             this.total_atendidos,
-            this.sin_atender,
-            this.permanencia});
+            this.total_perdidos,
+            this.espera_promedio});
             this.dg_simulaciones.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dg_simulaciones.EnableHeadersVisualStyles = false;
             this.dg_simulaciones.ImeMode = System.Windows.Forms.ImeMode.Disable;
@@ -232,217 +240,6 @@
             this.dg_simulaciones.ShowRowErrors = false;
             this.dg_simulaciones.Size = new System.Drawing.Size(801, 510);
             this.dg_simulaciones.TabIndex = 23;
-            // 
-            // reloj
-            // 
-            this.reloj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.reloj.FillWeight = 1F;
-            this.reloj.Frozen = true;
-            this.reloj.HeaderText = "Reloj";
-            this.reloj.Name = "reloj";
-            this.reloj.ReadOnly = true;
-            this.reloj.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.reloj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.reloj.Width = 55;
-            // 
-            // evento
-            // 
-            this.evento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.evento.FillWeight = 1F;
-            this.evento.Frozen = true;
-            this.evento.HeaderText = "Evento";
-            this.evento.Name = "evento";
-            this.evento.ReadOnly = true;
-            this.evento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.evento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.evento.Width = 80;
-            // 
-            // proxima_llegada
-            // 
-            this.proxima_llegada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.proxima_llegada.FillWeight = 1F;
-            this.proxima_llegada.HeaderText = "Próxima Llegada";
-            this.proxima_llegada.Name = "proxima_llegada";
-            this.proxima_llegada.ReadOnly = true;
-            this.proxima_llegada.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.proxima_llegada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proxima_llegada.Width = 60;
-            // 
-            // cola_recepcion
-            // 
-            this.cola_recepcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.cola_recepcion.FillWeight = 1F;
-            this.cola_recepcion.HeaderText = "Cola Recepción";
-            this.cola_recepcion.Name = "cola_recepcion";
-            this.cola_recepcion.ReadOnly = true;
-            this.cola_recepcion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cola_recepcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cola_recepcion.Width = 70;
-            // 
-            // estado_recepcion
-            // 
-            this.estado_recepcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.estado_recepcion.FillWeight = 1F;
-            this.estado_recepcion.HeaderText = "Estado Recepción";
-            this.estado_recepcion.Name = "estado_recepcion";
-            this.estado_recepcion.ReadOnly = true;
-            this.estado_recepcion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.estado_recepcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_recepcion.Width = 140;
-            // 
-            // proximo_fin_recepcion
-            // 
-            this.proximo_fin_recepcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.proximo_fin_recepcion.FillWeight = 1F;
-            this.proximo_fin_recepcion.HeaderText = "Próximo Fin Recepción";
-            this.proximo_fin_recepcion.Name = "proximo_fin_recepcion";
-            this.proximo_fin_recepcion.ReadOnly = true;
-            this.proximo_fin_recepcion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.proximo_fin_recepcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_recepcion.Width = 85;
-            // 
-            // cola_balanza
-            // 
-            this.cola_balanza.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.cola_balanza.FillWeight = 1F;
-            this.cola_balanza.HeaderText = "Cola Balanza";
-            this.cola_balanza.Name = "cola_balanza";
-            this.cola_balanza.ReadOnly = true;
-            this.cola_balanza.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cola_balanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cola_balanza.Width = 60;
-            // 
-            // estado_balanza
-            // 
-            this.estado_balanza.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.estado_balanza.FillWeight = 1F;
-            this.estado_balanza.HeaderText = "Estado Balanza";
-            this.estado_balanza.Name = "estado_balanza";
-            this.estado_balanza.ReadOnly = true;
-            this.estado_balanza.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.estado_balanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_balanza.Width = 140;
-            // 
-            // proximo_fin_balanza
-            // 
-            this.proximo_fin_balanza.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.proximo_fin_balanza.FillWeight = 1F;
-            this.proximo_fin_balanza.HeaderText = "Próximo Fin Balanza";
-            this.proximo_fin_balanza.Name = "proximo_fin_balanza";
-            this.proximo_fin_balanza.ReadOnly = true;
-            this.proximo_fin_balanza.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.proximo_fin_balanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_balanza.Width = 85;
-            // 
-            // cola_darsenas
-            // 
-            this.cola_darsenas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.cola_darsenas.FillWeight = 1F;
-            this.cola_darsenas.HeaderText = "Cola Dársenas";
-            this.cola_darsenas.Name = "cola_darsenas";
-            this.cola_darsenas.ReadOnly = true;
-            this.cola_darsenas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cola_darsenas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cola_darsenas.Width = 70;
-            // 
-            // estado_darsena_1
-            // 
-            this.estado_darsena_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.estado_darsena_1.FillWeight = 1F;
-            this.estado_darsena_1.HeaderText = "Estado Dársena 1";
-            this.estado_darsena_1.Name = "estado_darsena_1";
-            this.estado_darsena_1.ReadOnly = true;
-            this.estado_darsena_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.estado_darsena_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_darsena_1.Width = 140;
-            // 
-            // proximo_fin_darsena_1
-            // 
-            this.proximo_fin_darsena_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.proximo_fin_darsena_1.FillWeight = 1F;
-            this.proximo_fin_darsena_1.HeaderText = "Próximo Fin Dársena 1";
-            this.proximo_fin_darsena_1.Name = "proximo_fin_darsena_1";
-            this.proximo_fin_darsena_1.ReadOnly = true;
-            this.proximo_fin_darsena_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.proximo_fin_darsena_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_darsena_1.Width = 85;
-            // 
-            // atendidos_darsena_1
-            // 
-            this.atendidos_darsena_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.atendidos_darsena_1.FillWeight = 1F;
-            this.atendidos_darsena_1.HeaderText = "Atendidos Dársena 1";
-            this.atendidos_darsena_1.Name = "atendidos_darsena_1";
-            this.atendidos_darsena_1.ReadOnly = true;
-            this.atendidos_darsena_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.atendidos_darsena_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.atendidos_darsena_1.Width = 80;
-            // 
-            // estado_darsena_2
-            // 
-            this.estado_darsena_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.estado_darsena_2.FillWeight = 1F;
-            this.estado_darsena_2.HeaderText = "Estado Dársena 2";
-            this.estado_darsena_2.Name = "estado_darsena_2";
-            this.estado_darsena_2.ReadOnly = true;
-            this.estado_darsena_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.estado_darsena_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_darsena_2.Width = 140;
-            // 
-            // proximo_fin_darsena_2
-            // 
-            this.proximo_fin_darsena_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.proximo_fin_darsena_2.FillWeight = 1F;
-            this.proximo_fin_darsena_2.HeaderText = "Próximo Fin Dársena 2";
-            this.proximo_fin_darsena_2.Name = "proximo_fin_darsena_2";
-            this.proximo_fin_darsena_2.ReadOnly = true;
-            this.proximo_fin_darsena_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.proximo_fin_darsena_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_darsena_2.Width = 85;
-            // 
-            // atendidos_darsena_2
-            // 
-            this.atendidos_darsena_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.atendidos_darsena_2.FillWeight = 1F;
-            this.atendidos_darsena_2.HeaderText = "Atendidos Dársena 2";
-            this.atendidos_darsena_2.Name = "atendidos_darsena_2";
-            this.atendidos_darsena_2.ReadOnly = true;
-            this.atendidos_darsena_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.atendidos_darsena_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.atendidos_darsena_2.Width = 80;
-            // 
-            // total_atendidos
-            // 
-            this.total_atendidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.total_atendidos.FillWeight = 1F;
-            this.total_atendidos.HeaderText = "Total Atendidos";
-            this.total_atendidos.Name = "total_atendidos";
-            this.total_atendidos.ReadOnly = true;
-            this.total_atendidos.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.total_atendidos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.total_atendidos.Width = 70;
-            // 
-            // sin_atender
-            // 
-            this.sin_atender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.sin_atender.FillWeight = 1F;
-            this.sin_atender.HeaderText = "Total Sin Atender";
-            this.sin_atender.Name = "sin_atender";
-            this.sin_atender.ReadOnly = true;
-            this.sin_atender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.sin_atender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.sin_atender.Width = 70;
-            // 
-            // permanencia
-            // 
-            this.permanencia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.permanencia.FillWeight = 1F;
-            this.permanencia.HeaderText = "Permanencia Promedio";
-            this.permanencia.Name = "permanencia";
-            this.permanencia.ReadOnly = true;
-            this.permanencia.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.permanencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.permanencia.Width = 90;
             // 
             // btn_simular
             // 
@@ -682,6 +479,40 @@
             this.gb_menus.TabStop = false;
             this.gb_menus.Text = "Menús:";
             // 
+            // txt_demora_menu_2
+            // 
+            this.txt_demora_menu_2.Location = new System.Drawing.Point(82, 102);
+            this.txt_demora_menu_2.Name = "txt_demora_menu_2";
+            this.txt_demora_menu_2.Size = new System.Drawing.Size(37, 20);
+            this.txt_demora_menu_2.TabIndex = 12;
+            this.txt_demora_menu_2.Text = "15";
+            // 
+            // lbl_demora_menu_2
+            // 
+            this.lbl_demora_menu_2.AutoSize = true;
+            this.lbl_demora_menu_2.Location = new System.Drawing.Point(17, 105);
+            this.lbl_demora_menu_2.Name = "lbl_demora_menu_2";
+            this.lbl_demora_menu_2.Size = new System.Drawing.Size(56, 13);
+            this.lbl_demora_menu_2.TabIndex = 6;
+            this.lbl_demora_menu_2.Text = "Demora 2:";
+            // 
+            // txt_demora_menu_1
+            // 
+            this.txt_demora_menu_1.Location = new System.Drawing.Point(82, 76);
+            this.txt_demora_menu_1.Name = "txt_demora_menu_1";
+            this.txt_demora_menu_1.Size = new System.Drawing.Size(37, 20);
+            this.txt_demora_menu_1.TabIndex = 11;
+            this.txt_demora_menu_1.Text = "10";
+            // 
+            // lbl_demora_menu_1
+            // 
+            this.lbl_demora_menu_1.AutoSize = true;
+            this.lbl_demora_menu_1.Location = new System.Drawing.Point(17, 79);
+            this.lbl_demora_menu_1.Name = "lbl_demora_menu_1";
+            this.lbl_demora_menu_1.Size = new System.Drawing.Size(56, 13);
+            this.lbl_demora_menu_1.TabIndex = 4;
+            this.lbl_demora_menu_1.Text = "Demora 1:";
+            // 
             // txt_menu_2
             // 
             this.txt_menu_2.Location = new System.Drawing.Point(82, 48);
@@ -780,23 +611,6 @@
             this.gb_llegadas.TabStop = false;
             this.gb_llegadas.Text = "Llegadas:";
             // 
-            // txt_llegadas
-            // 
-            this.txt_llegadas.Location = new System.Drawing.Point(82, 22);
-            this.txt_llegadas.Name = "txt_llegadas";
-            this.txt_llegadas.Size = new System.Drawing.Size(37, 20);
-            this.txt_llegadas.TabIndex = 5;
-            this.txt_llegadas.Text = "10";
-            // 
-            // lbl_llegadas
-            // 
-            this.lbl_llegadas.AutoSize = true;
-            this.lbl_llegadas.Location = new System.Drawing.Point(17, 25);
-            this.lbl_llegadas.Name = "lbl_llegadas";
-            this.lbl_llegadas.Size = new System.Drawing.Size(45, 13);
-            this.lbl_llegadas.TabIndex = 0;
-            this.lbl_llegadas.Text = "Tiempo:";
-            // 
             // txt_cola_max
             // 
             this.txt_cola_max.Location = new System.Drawing.Point(82, 47);
@@ -814,39 +628,22 @@
             this.lbl_cola_max.TabIndex = 2;
             this.lbl_cola_max.Text = "Cola max:";
             // 
-            // txt_demora_menu_2
+            // txt_llegadas
             // 
-            this.txt_demora_menu_2.Location = new System.Drawing.Point(82, 102);
-            this.txt_demora_menu_2.Name = "txt_demora_menu_2";
-            this.txt_demora_menu_2.Size = new System.Drawing.Size(37, 20);
-            this.txt_demora_menu_2.TabIndex = 12;
-            this.txt_demora_menu_2.Text = "15";
+            this.txt_llegadas.Location = new System.Drawing.Point(82, 22);
+            this.txt_llegadas.Name = "txt_llegadas";
+            this.txt_llegadas.Size = new System.Drawing.Size(37, 20);
+            this.txt_llegadas.TabIndex = 5;
+            this.txt_llegadas.Text = "10";
             // 
-            // lbl_demora_menu_2
+            // lbl_llegadas
             // 
-            this.lbl_demora_menu_2.AutoSize = true;
-            this.lbl_demora_menu_2.Location = new System.Drawing.Point(17, 105);
-            this.lbl_demora_menu_2.Name = "lbl_demora_menu_2";
-            this.lbl_demora_menu_2.Size = new System.Drawing.Size(56, 13);
-            this.lbl_demora_menu_2.TabIndex = 6;
-            this.lbl_demora_menu_2.Text = "Demora 2:";
-            // 
-            // txt_demora_menu_1
-            // 
-            this.txt_demora_menu_1.Location = new System.Drawing.Point(82, 76);
-            this.txt_demora_menu_1.Name = "txt_demora_menu_1";
-            this.txt_demora_menu_1.Size = new System.Drawing.Size(37, 20);
-            this.txt_demora_menu_1.TabIndex = 11;
-            this.txt_demora_menu_1.Text = "10";
-            // 
-            // lbl_demora_menu_1
-            // 
-            this.lbl_demora_menu_1.AutoSize = true;
-            this.lbl_demora_menu_1.Location = new System.Drawing.Point(17, 79);
-            this.lbl_demora_menu_1.Name = "lbl_demora_menu_1";
-            this.lbl_demora_menu_1.Size = new System.Drawing.Size(56, 13);
-            this.lbl_demora_menu_1.TabIndex = 4;
-            this.lbl_demora_menu_1.Text = "Demora 1:";
+            this.lbl_llegadas.AutoSize = true;
+            this.lbl_llegadas.Location = new System.Drawing.Point(17, 25);
+            this.lbl_llegadas.Name = "lbl_llegadas";
+            this.lbl_llegadas.Size = new System.Drawing.Size(45, 13);
+            this.lbl_llegadas.TabIndex = 0;
+            this.lbl_llegadas.Text = "Tiempo:";
             // 
             // gb_horarios
             // 
@@ -894,6 +691,261 @@
             this.lbl_apertura.Size = new System.Drawing.Size(50, 13);
             this.lbl_apertura.TabIndex = 0;
             this.lbl_apertura.Text = "Apertura:";
+            // 
+            // reloj
+            // 
+            this.reloj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.reloj.FillWeight = 1F;
+            this.reloj.Frozen = true;
+            this.reloj.HeaderText = "Reloj";
+            this.reloj.Name = "reloj";
+            this.reloj.ReadOnly = true;
+            this.reloj.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.reloj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.reloj.Width = 55;
+            // 
+            // evento
+            // 
+            this.evento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.evento.FillWeight = 1F;
+            this.evento.Frozen = true;
+            this.evento.HeaderText = "Evento";
+            this.evento.Name = "evento";
+            this.evento.ReadOnly = true;
+            this.evento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.evento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.evento.Width = 80;
+            // 
+            // proxima_llegada
+            // 
+            this.proxima_llegada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proxima_llegada.FillWeight = 1F;
+            this.proxima_llegada.HeaderText = "Próxima Llegada";
+            this.proxima_llegada.Name = "proxima_llegada";
+            this.proxima_llegada.ReadOnly = true;
+            this.proxima_llegada.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proxima_llegada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proxima_llegada.Width = 60;
+            // 
+            // cola_local
+            // 
+            this.cola_local.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cola_local.FillWeight = 1F;
+            this.cola_local.HeaderText = "Cola Local";
+            this.cola_local.Name = "cola_local";
+            this.cola_local.ReadOnly = true;
+            this.cola_local.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cola_local.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cola_local.Width = 70;
+            // 
+            // cola_mozo
+            // 
+            this.cola_mozo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cola_mozo.FillWeight = 1F;
+            this.cola_mozo.HeaderText = "Cola Mozo";
+            this.cola_mozo.Name = "cola_mozo";
+            this.cola_mozo.ReadOnly = true;
+            this.cola_mozo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cola_mozo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cola_mozo.Width = 70;
+            // 
+            // estado_mozo
+            // 
+            this.estado_mozo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mozo.FillWeight = 1F;
+            this.estado_mozo.HeaderText = "Estado Mozo";
+            this.estado_mozo.Name = "estado_mozo";
+            this.estado_mozo.ReadOnly = true;
+            this.estado_mozo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mozo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mozo.Width = 140;
+            // 
+            // proximo_fin_mozo
+            // 
+            this.proximo_fin_mozo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mozo.FillWeight = 1F;
+            this.proximo_fin_mozo.HeaderText = "Próximo Fin Mozo";
+            this.proximo_fin_mozo.Name = "proximo_fin_mozo";
+            this.proximo_fin_mozo.ReadOnly = true;
+            this.proximo_fin_mozo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mozo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mozo.Width = 85;
+            // 
+            // cola_cocina
+            // 
+            this.cola_cocina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cola_cocina.FillWeight = 1F;
+            this.cola_cocina.HeaderText = "Cola Cocina";
+            this.cola_cocina.Name = "cola_cocina";
+            this.cola_cocina.ReadOnly = true;
+            this.cola_cocina.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cola_cocina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cola_cocina.Width = 60;
+            // 
+            // estado_cocina
+            // 
+            this.estado_cocina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_cocina.FillWeight = 1F;
+            this.estado_cocina.HeaderText = "Estado Cocina";
+            this.estado_cocina.Name = "estado_cocina";
+            this.estado_cocina.ReadOnly = true;
+            this.estado_cocina.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_cocina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_cocina.Width = 140;
+            // 
+            // proximo_fin_cocina
+            // 
+            this.proximo_fin_cocina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_cocina.FillWeight = 1F;
+            this.proximo_fin_cocina.HeaderText = "Próximo Fin Cocina";
+            this.proximo_fin_cocina.Name = "proximo_fin_cocina";
+            this.proximo_fin_cocina.ReadOnly = true;
+            this.proximo_fin_cocina.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_cocina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_cocina.Width = 85;
+            // 
+            // estado_mesa_1
+            // 
+            this.estado_mesa_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mesa_1.FillWeight = 1F;
+            this.estado_mesa_1.HeaderText = "Estado Mesa 1";
+            this.estado_mesa_1.Name = "estado_mesa_1";
+            this.estado_mesa_1.ReadOnly = true;
+            this.estado_mesa_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mesa_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mesa_1.Width = 140;
+            // 
+            // estado_mesa_2
+            // 
+            this.estado_mesa_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mesa_2.FillWeight = 1F;
+            this.estado_mesa_2.HeaderText = "Estado Mesa 2";
+            this.estado_mesa_2.Name = "estado_mesa_2";
+            this.estado_mesa_2.ReadOnly = true;
+            this.estado_mesa_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mesa_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mesa_2.Width = 140;
+            // 
+            // estado_mesa_3
+            // 
+            this.estado_mesa_3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mesa_3.FillWeight = 1F;
+            this.estado_mesa_3.HeaderText = "Estado Mesa 3";
+            this.estado_mesa_3.Name = "estado_mesa_3";
+            this.estado_mesa_3.ReadOnly = true;
+            this.estado_mesa_3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mesa_3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mesa_3.Width = 140;
+            // 
+            // estado_mesa_4
+            // 
+            this.estado_mesa_4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mesa_4.FillWeight = 1F;
+            this.estado_mesa_4.HeaderText = "Estado Mesa 4";
+            this.estado_mesa_4.Name = "estado_mesa_4";
+            this.estado_mesa_4.ReadOnly = true;
+            this.estado_mesa_4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mesa_4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mesa_4.Width = 140;
+            // 
+            // estado_mesa_5
+            // 
+            this.estado_mesa_5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mesa_5.FillWeight = 1F;
+            this.estado_mesa_5.HeaderText = "Estado Mesa 5";
+            this.estado_mesa_5.Name = "estado_mesa_5";
+            this.estado_mesa_5.ReadOnly = true;
+            this.estado_mesa_5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mesa_5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mesa_5.Width = 140;
+            // 
+            // estado_mesa_6
+            // 
+            this.estado_mesa_6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mesa_6.FillWeight = 1F;
+            this.estado_mesa_6.HeaderText = "Estado Mesa 6";
+            this.estado_mesa_6.Name = "estado_mesa_6";
+            this.estado_mesa_6.ReadOnly = true;
+            this.estado_mesa_6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mesa_6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mesa_6.Width = 140;
+            // 
+            // estado_mesa_7
+            // 
+            this.estado_mesa_7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mesa_7.FillWeight = 1F;
+            this.estado_mesa_7.HeaderText = "Estado Mesa 7";
+            this.estado_mesa_7.Name = "estado_mesa_7";
+            this.estado_mesa_7.ReadOnly = true;
+            this.estado_mesa_7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mesa_7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mesa_7.Width = 140;
+            // 
+            // estado_mesa_8
+            // 
+            this.estado_mesa_8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mesa_8.FillWeight = 1F;
+            this.estado_mesa_8.HeaderText = "Estado Mesa 8";
+            this.estado_mesa_8.Name = "estado_mesa_8";
+            this.estado_mesa_8.ReadOnly = true;
+            this.estado_mesa_8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mesa_8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mesa_8.Width = 140;
+            // 
+            // estado_mesa_9
+            // 
+            this.estado_mesa_9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mesa_9.FillWeight = 1F;
+            this.estado_mesa_9.HeaderText = "Estado Mesa 9";
+            this.estado_mesa_9.Name = "estado_mesa_9";
+            this.estado_mesa_9.ReadOnly = true;
+            this.estado_mesa_9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mesa_9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mesa_9.Width = 140;
+            // 
+            // estado_mesa_10
+            // 
+            this.estado_mesa_10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estado_mesa_10.FillWeight = 1F;
+            this.estado_mesa_10.HeaderText = "Estado Mesa 10";
+            this.estado_mesa_10.Name = "estado_mesa_10";
+            this.estado_mesa_10.ReadOnly = true;
+            this.estado_mesa_10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado_mesa_10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado_mesa_10.Width = 140;
+            // 
+            // total_atendidos
+            // 
+            this.total_atendidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.total_atendidos.FillWeight = 1F;
+            this.total_atendidos.HeaderText = "Total Atendidos";
+            this.total_atendidos.Name = "total_atendidos";
+            this.total_atendidos.ReadOnly = true;
+            this.total_atendidos.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.total_atendidos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.total_atendidos.Width = 70;
+            // 
+            // total_perdidos
+            // 
+            this.total_perdidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.total_perdidos.FillWeight = 1F;
+            this.total_perdidos.HeaderText = "Total Perdidos";
+            this.total_perdidos.Name = "total_perdidos";
+            this.total_perdidos.ReadOnly = true;
+            this.total_perdidos.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.total_perdidos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.total_perdidos.Width = 70;
+            // 
+            // espera_promedio
+            // 
+            this.espera_promedio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.espera_promedio.FillWeight = 1F;
+            this.espera_promedio.HeaderText = "Espera Promedio";
+            this.espera_promedio.Name = "espera_promedio";
+            this.espera_promedio.ReadOnly = true;
+            this.espera_promedio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.espera_promedio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.espera_promedio.Width = 90;
             // 
             // Tp7
             // 
@@ -947,25 +999,6 @@
         private System.Windows.Forms.Label lbl_hora;
         private System.Windows.Forms.Button btn_detener;
         private System.Windows.Forms.DataGridView dg_simulaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reloj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn evento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proxima_llegada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cola_recepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_recepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_recepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cola_balanza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_balanza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_balanza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cola_darsenas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_darsena_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_darsena_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn atendidos_darsena_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_darsena_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_darsena_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn atendidos_darsena_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_atendidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sin_atender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn permanencia;
         private System.Windows.Forms.Button btn_simular;
         private System.Windows.Forms.GroupBox gb_cantidades;
         private System.Windows.Forms.TextBox txt_hasta;
@@ -1013,6 +1046,29 @@
         private System.Windows.Forms.Label lbl_cierre;
         private System.Windows.Forms.TextBox txt_apertura;
         private System.Windows.Forms.Label lbl_apertura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reloj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn evento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proxima_llegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cola_local;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cola_mozo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mozo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mozo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cola_cocina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_cocina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_cocina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_atendidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_perdidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn espera_promedio;
     }
 }
 

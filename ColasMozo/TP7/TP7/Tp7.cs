@@ -243,6 +243,12 @@ namespace TP7
                         numCliente++;
                         var clienteLlegando = new Cliente($"Grupo {numCliente}", 1);
                         clienteLlegando.Llegar(relojActual);
+
+                        if (simulacion < fin)
+                        {
+                            clientes.Add(clienteLlegando);
+                        }
+
                         var cantidadGrupo = (int)grupos.ObtenerValor();
                         if (mesas.Any(m => m.EstaLibre()))
                         {
