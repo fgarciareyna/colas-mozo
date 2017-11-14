@@ -43,11 +43,11 @@
             this.lbl_hasta = new System.Windows.Forms.Label();
             this.lbl_desde = new System.Windows.Forms.Label();
             this.gb_resultados = new System.Windows.Forms.GroupBox();
-            this.txt_permanencia_a = new System.Windows.Forms.TextBox();
+            this.txt_espera_promedio = new System.Windows.Forms.TextBox();
             this.lbl_permanencia = new System.Windows.Forms.Label();
-            this.txt_no_atendidos_a = new System.Windows.Forms.TextBox();
-            this.lbl_no_atendidos = new System.Windows.Forms.Label();
-            this.txt_atendidos_a = new System.Windows.Forms.TextBox();
+            this.txt_perdidos = new System.Windows.Forms.TextBox();
+            this.lbl_perdidos = new System.Windows.Forms.Label();
+            this.txt_atendidos = new System.Windows.Forms.TextBox();
             this.lbl_atendidos = new System.Windows.Forms.Label();
             this.gb_comida = new System.Windows.Forms.GroupBox();
             this.txt_comida_varianza = new System.Windows.Forms.TextBox();
@@ -301,11 +301,11 @@
             // 
             // gb_resultados
             // 
-            this.gb_resultados.Controls.Add(this.txt_permanencia_a);
+            this.gb_resultados.Controls.Add(this.txt_espera_promedio);
             this.gb_resultados.Controls.Add(this.lbl_permanencia);
-            this.gb_resultados.Controls.Add(this.txt_no_atendidos_a);
-            this.gb_resultados.Controls.Add(this.lbl_no_atendidos);
-            this.gb_resultados.Controls.Add(this.txt_atendidos_a);
+            this.gb_resultados.Controls.Add(this.txt_perdidos);
+            this.gb_resultados.Controls.Add(this.lbl_perdidos);
+            this.gb_resultados.Controls.Add(this.txt_atendidos);
             this.gb_resultados.Controls.Add(this.lbl_atendidos);
             this.gb_resultados.Location = new System.Drawing.Point(328, 12);
             this.gb_resultados.Name = "gb_resultados";
@@ -314,14 +314,14 @@
             this.gb_resultados.TabStop = false;
             this.gb_resultados.Text = "Resultados:";
             // 
-            // txt_permanencia_a
+            // txt_espera_promedio
             // 
-            this.txt_permanencia_a.Enabled = false;
-            this.txt_permanencia_a.Location = new System.Drawing.Point(210, 52);
-            this.txt_permanencia_a.Name = "txt_permanencia_a";
-            this.txt_permanencia_a.ReadOnly = true;
-            this.txt_permanencia_a.Size = new System.Drawing.Size(64, 20);
-            this.txt_permanencia_a.TabIndex = 11;
+            this.txt_espera_promedio.Enabled = false;
+            this.txt_espera_promedio.Location = new System.Drawing.Point(210, 52);
+            this.txt_espera_promedio.Name = "txt_espera_promedio";
+            this.txt_espera_promedio.ReadOnly = true;
+            this.txt_espera_promedio.Size = new System.Drawing.Size(64, 20);
+            this.txt_espera_promedio.TabIndex = 11;
             // 
             // lbl_permanencia
             // 
@@ -332,32 +332,32 @@
             this.lbl_permanencia.Text = "Espera promedio:";
             this.lbl_permanencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_no_atendidos_a
+            // txt_perdidos
             // 
-            this.txt_no_atendidos_a.Enabled = false;
-            this.txt_no_atendidos_a.Location = new System.Drawing.Point(116, 52);
-            this.txt_no_atendidos_a.Name = "txt_no_atendidos_a";
-            this.txt_no_atendidos_a.ReadOnly = true;
-            this.txt_no_atendidos_a.Size = new System.Drawing.Size(64, 20);
-            this.txt_no_atendidos_a.TabIndex = 8;
+            this.txt_perdidos.Enabled = false;
+            this.txt_perdidos.Location = new System.Drawing.Point(116, 52);
+            this.txt_perdidos.Name = "txt_perdidos";
+            this.txt_perdidos.ReadOnly = true;
+            this.txt_perdidos.Size = new System.Drawing.Size(64, 20);
+            this.txt_perdidos.TabIndex = 8;
             // 
-            // lbl_no_atendidos
+            // lbl_perdidos
             // 
-            this.lbl_no_atendidos.Location = new System.Drawing.Point(113, 16);
-            this.lbl_no_atendidos.Name = "lbl_no_atendidos";
-            this.lbl_no_atendidos.Size = new System.Drawing.Size(74, 33);
-            this.lbl_no_atendidos.TabIndex = 7;
-            this.lbl_no_atendidos.Text = "No atendidos:";
-            this.lbl_no_atendidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_perdidos.Location = new System.Drawing.Point(113, 16);
+            this.lbl_perdidos.Name = "lbl_perdidos";
+            this.lbl_perdidos.Size = new System.Drawing.Size(74, 33);
+            this.lbl_perdidos.TabIndex = 7;
+            this.lbl_perdidos.Text = "Perdidos:";
+            this.lbl_perdidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_atendidos_a
+            // txt_atendidos
             // 
-            this.txt_atendidos_a.Enabled = false;
-            this.txt_atendidos_a.Location = new System.Drawing.Point(20, 52);
-            this.txt_atendidos_a.Name = "txt_atendidos_a";
-            this.txt_atendidos_a.ReadOnly = true;
-            this.txt_atendidos_a.Size = new System.Drawing.Size(64, 20);
-            this.txt_atendidos_a.TabIndex = 5;
+            this.txt_atendidos.Enabled = false;
+            this.txt_atendidos.Location = new System.Drawing.Point(20, 52);
+            this.txt_atendidos.Name = "txt_atendidos";
+            this.txt_atendidos.ReadOnly = true;
+            this.txt_atendidos.Size = new System.Drawing.Size(64, 20);
+            this.txt_atendidos.TabIndex = 5;
             // 
             // lbl_atendidos
             // 
@@ -1006,11 +1006,11 @@
         private System.Windows.Forms.Label lbl_hasta;
         private System.Windows.Forms.Label lbl_desde;
         private System.Windows.Forms.GroupBox gb_resultados;
-        private System.Windows.Forms.TextBox txt_permanencia_a;
+        private System.Windows.Forms.TextBox txt_espera_promedio;
         private System.Windows.Forms.Label lbl_permanencia;
-        private System.Windows.Forms.TextBox txt_no_atendidos_a;
-        private System.Windows.Forms.Label lbl_no_atendidos;
-        private System.Windows.Forms.TextBox txt_atendidos_a;
+        private System.Windows.Forms.TextBox txt_perdidos;
+        private System.Windows.Forms.Label lbl_perdidos;
+        private System.Windows.Forms.TextBox txt_atendidos;
         private System.Windows.Forms.Label lbl_atendidos;
         private System.Windows.Forms.GroupBox gb_comida;
         private System.Windows.Forms.TextBox txt_comida_varianza;

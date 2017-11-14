@@ -25,17 +25,16 @@ namespace TP7
 
         private delegate void InicioFinDelegate(bool fin);
 
-        private delegate void ColumnasDelegate(int numCamion);
+        private delegate void ColumnasDelegate(int numCliente);
 
         private delegate void FilaDelegate(DateTime relojActual, string eventoActual, Llegada llegadas,
-            ICola colaRecepcion, Servidor recepcion, ICola colaBalanza, Servidor balanza, ICola colaDarsenas,
-            Servidor darsena1,
-            Servidor darsena2, int atendidos, int noAtendidos, decimal permanenciaDiaria, IEnumerable<Cliente> clientes);
+            ICola colaLocal, ICola colaMozo, Servidor mozo, ICola colaCocina, Servidor cocina,
+            List<Ocupacion> mesas, int atendidos, int noAtendidos, decimal esperaPromedio,
+            List<VectorCliente> clientes);
 
-        private delegate void StatusDelegate(int dia, DateTime relojActual, int simulacion);
+        private delegate void StatusDelegate(DateTime relojActual, int simulacion);
 
-        private delegate void ResultadosDelegate(decimal promedioAtendidos, decimal promedioNoAtendidos,
-            decimal promedioPermanencia);
+        private delegate void ResultadosDelegate(decimal atendidos, decimal perdidos, decimal esperaPromedio);
 
         private bool _cancelar;
 
@@ -200,9 +199,9 @@ namespace TP7
             var simulacion = 0;
             var numCliente = 0;
             var colaLocal = new ColaFifo("local");
-            var clientes = new List<Cliente>();
+            var clientes = new List<VectorCliente>();
             var atendidos = 0;
-            var noAtendidos = 0;
+            var perdidos = 0;
 
             _cancelar = false;
 
@@ -243,17 +242,26 @@ namespace TP7
                         numCliente++;
                         var clienteLlegando = new Cliente($"Grupo {numCliente}", 1);
                         clienteLlegando.Llegar(relojActual);
+                        var cantidadGrupo = (int)grupos.ObtenerValor();
 
                         if (simulacion < fin)
                         {
-                            clientes.Add(clienteLlegando);
+                            clientes.Add(new VectorCliente
+                            {
+                                Cliente = clienteLlegando,
+                                Cantidad = cantidadGrupo
+                            });
                         }
 
-                        var cantidadGrupo = (int)grupos.ObtenerValor();
                         if (mesas.Any(m => m.EstaLibre()))
                         {
-                            mesas.First(m => m.EstaLibre()).Ocupar(clienteLlegando, cantidadGrupo);
+                            var mesaLibre = mesas.First(m => m.EstaLibre());
+                            mesaLibre.Ocupar(clienteLlegando, cantidadGrupo);
                             mozo.LlegadaGrupo(relojActual, clienteLlegando, cantidadGrupo);
+                            if (simulacion < fin)
+                            {
+                                clientes.Last().Mesa = mesaLibre.Mesa.Nombre;
+                            }
                         }
                         else if (colaLocal.Cantidad() < colaMax)
                         {
@@ -262,7 +270,7 @@ namespace TP7
                         else
                         {
                             clienteLlegando.Salir(relojActual);
-                            noAtendidos += cantidadGrupo;
+                            perdidos += cantidadGrupo;
                         }
                         break;
 
@@ -275,6 +283,12 @@ namespace TP7
                             var cantidadPedidos = mesa.Cantidad;
                             clienteAtendido.CambiarPrioridad(pedido);
                             cocina.LlegadaGrupo(relojActual, clienteAtendido, cantidadPedidos);
+
+                            if (simulacion < fin)
+                            {
+                                clientes.Single(c => c.Cliente.Equals(clienteAtendido))
+                                    .Menu = $"Menu {pedido}";
+                            }
                         }
                         else
                         {
@@ -434,13 +448,146 @@ namespace TP7
                         {
                             var cantidadAfuera = (int)grupos.ObtenerValor();
                             cliente.Salir(relojActual);
-                            noAtendidos += cantidadAfuera;
+                            perdidos += cantidadAfuera;
                         }
                         colaLocal.Vaciar();
                         break;
                 }
             }
         }
+
+        public void InicioFin(bool fin)
+        {
+            btn_simular.Enabled = fin;
+
+            btn_detener.Enabled = !fin;
+
+            if (fin) return;
+
+            dg_simulaciones.Rows.Clear();
+            var cols = dg_simulaciones.Columns.Count;
+            for (var c = cols - 1; c >= 23; c--)
+            {
+                dg_simulaciones.Columns.RemoveAt(c);
+            }
+        }
+
+        private void AgregarColumnas(int numCliente)
+        {
+            var columns = new DataGridViewColumn[6];
+
+            DataGridViewColumn columnLlegada = new DataGridViewTextBoxColumn();
+            columnLlegada.CellTemplate = new DataGridViewTextBoxCell();
+            columnLlegada.Name = $"llegada_cliente_{numCliente}";
+            columnLlegada.HeaderText = $@"Llegada Cliente {numCliente}";
+            columnLlegada.Width = 80;
+            columnLlegada.FillWeight = 1;
+            columns[0] = columnLlegada;
+
+            DataGridViewColumn columnEstado = new DataGridViewTextBoxColumn();
+            columnEstado.CellTemplate = new DataGridViewTextBoxCell();
+            columnEstado.Name = $"estado_cliente_{numCliente}";
+            columnEstado.HeaderText = $@"Estado Cliente {numCliente}";
+            columnEstado.Width = 120;
+            columnEstado.FillWeight = 1;
+            columns[1] = columnEstado;
+
+            DataGridViewColumn columnCantidad = new DataGridViewTextBoxColumn();
+            columnCantidad.CellTemplate = new DataGridViewTextBoxCell();
+            columnCantidad.Name = $"cantidad_cliente_{numCliente}";
+            columnCantidad.HeaderText = $@"Cantidad Cliente {numCliente}";
+            columnCantidad.Width = 80;
+            columnCantidad.FillWeight = 1;
+            columns[2] = columnCantidad;
+
+            DataGridViewColumn columnMesa = new DataGridViewTextBoxColumn();
+            columnMesa.CellTemplate = new DataGridViewTextBoxCell();
+            columnMesa.Name = $"mesa_cliente_{numCliente}";
+            columnMesa.HeaderText = $@"Mesa Cliente {numCliente}";
+            columnMesa.Width = 80;
+            columnMesa.FillWeight = 1;
+            columns[3] = columnMesa;
+
+            DataGridViewColumn columnMenu = new DataGridViewTextBoxColumn();
+            columnMenu.CellTemplate = new DataGridViewTextBoxCell();
+            columnMenu.Name = $"menu_cliente_{numCliente}";
+            columnMenu.HeaderText = $@"Menú Cliente {numCliente}";
+            columnMenu.Width = 80;
+            columnMenu.FillWeight = 1;
+            columns[4] = columnMenu;
+
+            DataGridViewColumn columnEspera = new DataGridViewTextBoxColumn();
+            columnEspera.CellTemplate = new DataGridViewTextBoxCell();
+            columnEspera.Name = $"espera_cliente_{numCliente}";
+            columnEspera.HeaderText = $@"Espera Cliente {numCliente}";
+            columnEspera.Width = 80;
+            columnEspera.FillWeight = 1;
+            columns[5] = columnEspera;
+
+            dg_simulaciones.Columns.AddRange(columns);
+        }
+
+        private void AgregarFila(DateTime relojActual, string eventoActual, Llegada llegadas,
+            ICola colaLocal, ICola colaMozo, Servidor mozo, ICola colaCocina, Servidor cocina,
+            List<Ocupacion> mesas, int atendidos, int noAtendidos, decimal esperaPromedio,
+            List<VectorCliente> clientes)
+        {
+            var row = dg_simulaciones.Rows.Add(
+                            relojActual.ToString("HH:mm:ss"),
+                            eventoActual,
+                            llegadas.ProximaLlegada?.ToString("HH:mm:ss"),
+                            colaLocal.Cantidad(),
+                            colaMozo.Cantidad(),
+                            mozo.Estado,
+                            mozo.ProximoFinAtencion?.ToString("HH:mm:ss"),
+                            colaCocina.Cantidad(),
+                            cocina.Estado,
+                            cocina.ProximoFinAtencion?.ToString("HH:mm:ss"),
+                            atendidos,
+                            noAtendidos,
+                            DateTimeConverter.DesdeMinutos(esperaPromedio)
+                        );
+
+            foreach (var mesa in mesas)
+            {
+                var num = mesa.Mesa.Nombre.Split(' ')[1];
+
+                dg_simulaciones.Rows[row].Cells[$"estado_mesa_{num}"].Value = mesa.Mesa.Estado;
+                dg_simulaciones.Rows[row].Cells[$"estado_mesa_{num}"].Value = mesa.Mesa.Estado; //TODO: Próximo fin
+            }
+
+            /*foreach (var cliente in clientes)
+            {
+                var num = cliente.Nombre.Split(' ')[1];
+
+                dg_simulaciones.Rows[row].Cells[$"llegada_camion_{num}"].Value = cliente.HoraLlegada.ToString("HH:mm:ss");
+                dg_simulaciones.Rows[row].Cells[$"estado_camion_{num}"].Value = cliente.Estado;
+                dg_simulaciones.Rows[row].Cells[$"permanencia_camion_{num}"].Value = DateTimeConverter.DesdeMinutos(cliente.TiempoEnSistema);
+            }*/
+        }
+
+        /*private void ActualizarStatus(int dia, DateTime relojActual, int simulacion)
+        {
+            txt_dia.Text = dia.ToString();
+            txt_hora.Text = relojActual.ToString("HH:mm:ss");
+            txt_evento.Text = simulacion.ToString();
+        }
+
+        private void MostrarResultados(decimal promedioAtendidos, decimal promedioNoAtendidos, decimal promedioPermanencia)
+        {
+            if (rb_estrategia_a.Checked)
+            {
+                txt_atendidos_a.Text = Math.Round(promedioAtendidos, Decimales).ToString();
+                txt_no_atendidos_a.Text = Math.Round(promedioNoAtendidos, Decimales).ToString();
+                txt_permanencia_a.Text = DateTimeConverter.DesdeMinutos(promedioPermanencia);
+            }
+            else
+            {
+                txt_atendidos_b.Text = Math.Round(promedioAtendidos, Decimales).ToString();
+                txt_no_atendidos_b.Text = Math.Round(promedioNoAtendidos, Decimales).ToString();
+                txt_permanencia_b.Text = DateTimeConverter.DesdeMinutos(promedioPermanencia);
+            }
+        }*/
 
         private void btn_detener_Click(object sender, EventArgs e)
         {
