@@ -10,6 +10,7 @@ using Colas;
 using Colas.Clientes;
 using Colas.Colas;
 using Colas.Servidores;
+using Montecarlo.Acumuladores;
 using Montecarlo.TablaDistribucion;
 using NumerosAleatorios.VariablesAleatorias;
 
@@ -17,8 +18,6 @@ namespace TP7
 {
     public partial class Tp7 : Form
     {
-        private const int Decimales = 2;
-
         private readonly CultureInfo _culture;
 
         private Thread _simularThread;
@@ -27,14 +26,14 @@ namespace TP7
 
         private delegate void ColumnasDelegate(int numCliente);
 
-        private delegate void FilaDelegate(DateTime relojActual, string eventoActual, Llegada llegadas,
+        private delegate void FilaDelegate(DateTime relojActual, string eventoActual, Llegada local,
             ICola colaLocal, ICola colaMozo, Servidor mozo, ICola colaCocina, Servidor cocina,
-            List<Ocupacion> mesas, int atendidos, int noAtendidos, decimal esperaPromedio,
+            List<Ocupacion> mesas, int atendidos, int perdidos, decimal esperaPromedio,
             List<VectorCliente> clientes);
 
         private delegate void StatusDelegate(DateTime relojActual, int simulacion);
 
-        private delegate void ResultadosDelegate(decimal atendidos, decimal perdidos, decimal esperaPromedio);
+        private delegate void ResultadosDelegate(int atendidos, int perdidos, decimal esperaPromedio);
 
         private bool _cancelar;
 
@@ -104,6 +103,16 @@ namespace TP7
 
         private void Simular()
         {
+            //delegates
+            var inicioFinInstance = new InicioFinDelegate(InicioFin);
+            var columnasInstance = new ColumnasDelegate(AgregarColumnas);
+            var filaInstance = new FilaDelegate(AgregarFila);
+            var statusInstance = new StatusDelegate(ActualizarStatus);
+            var resultadosInstance = new ResultadosDelegate(MostrarResultados);
+
+            //preparación inicial del formulario
+            Invoke(inicioFinInstance, false);
+
             //clientes
             var entreLlegadas = double.Parse(txt_llegadas.Text);
             var distribucionLlegadas = new DistribucionUniforme(entreLlegadas, entreLlegadas);
@@ -202,6 +211,8 @@ namespace TP7
             var clientes = new List<VectorCliente>();
             var atendidos = 0;
             var perdidos = 0;
+            var acumuladorEspera = new PromedioAcumulado();
+            double esperaPromedio = 0;
 
             _cancelar = false;
 
@@ -251,6 +262,8 @@ namespace TP7
                                 Cliente = clienteLlegando,
                                 Cantidad = cantidadGrupo
                             });
+                            //agrego las columnas para el vector de estados del cliente
+                            Invoke(columnasInstance, numCliente);
                         }
 
                         if (mesas.Any(m => m.EstaLibre()))
@@ -307,6 +320,12 @@ namespace TP7
                         clienteSaliendo1.Salir(relojActual);
                         var cantidadAtendidos1 = mesas.Single(m => m.Mesa.Equals(mesa1)).Cantidad;
                         atendidos += cantidadAtendidos1;
+
+                        for (var i = 0; i < cantidadAtendidos1; i++)
+                        {
+                            esperaPromedio = acumuladorEspera.CalcularSiguiente((double)clienteSaliendo1.TiempoEspera());
+                        }
+
                         if (!colaLocal.Vacia())
                         {
                             var clienteEsperando = colaLocal.ProximoCliente();
@@ -321,6 +340,12 @@ namespace TP7
                         clienteSaliendo2.Salir(relojActual);
                         var cantidadAtendidos2 = mesas.Single(m => m.Mesa.Equals(mesa2)).Cantidad;
                         atendidos += cantidadAtendidos2;
+
+                        for (var i = 0; i < cantidadAtendidos2; i++)
+                        {
+                            esperaPromedio = acumuladorEspera.CalcularSiguiente((double)clienteSaliendo2.TiempoEspera());
+                        }
+
                         if (!colaLocal.Vacia())
                         {
                             var clienteEsperando = colaLocal.ProximoCliente();
@@ -335,6 +360,12 @@ namespace TP7
                         clienteSaliendo3.Salir(relojActual);
                         var cantidadAtendidos3 = mesas.Single(m => m.Mesa.Equals(mesa3)).Cantidad;
                         atendidos += cantidadAtendidos3;
+
+                        for (var i = 0; i < cantidadAtendidos3; i++)
+                        {
+                            esperaPromedio = acumuladorEspera.CalcularSiguiente((double)clienteSaliendo3.TiempoEspera());
+                        }
+
                         if (!colaLocal.Vacia())
                         {
                             var clienteEsperando = colaLocal.ProximoCliente();
@@ -349,6 +380,12 @@ namespace TP7
                         clienteSaliendo4.Salir(relojActual);
                         var cantidadAtendidos4 = mesas.Single(m => m.Mesa.Equals(mesa4)).Cantidad;
                         atendidos += cantidadAtendidos4;
+
+                        for (var i = 0; i < cantidadAtendidos4; i++)
+                        {
+                            esperaPromedio = acumuladorEspera.CalcularSiguiente((double)clienteSaliendo4.TiempoEspera());
+                        }
+
                         if (!colaLocal.Vacia())
                         {
                             var clienteEsperando = colaLocal.ProximoCliente();
@@ -363,6 +400,12 @@ namespace TP7
                         clienteSaliendo5.Salir(relojActual);
                         var cantidadAtendidos5 = mesas.Single(m => m.Mesa.Equals(mesa5)).Cantidad;
                         atendidos += cantidadAtendidos5;
+
+                        for (var i = 0; i < cantidadAtendidos5; i++)
+                        {
+                            esperaPromedio = acumuladorEspera.CalcularSiguiente((double)clienteSaliendo5.TiempoEspera());
+                        }
+
                         if (!colaLocal.Vacia())
                         {
                             var clienteEsperando = colaLocal.ProximoCliente();
@@ -377,6 +420,12 @@ namespace TP7
                         clienteSaliendo6.Salir(relojActual);
                         var cantidadAtendidos6 = mesas.Single(m => m.Mesa.Equals(mesa6)).Cantidad;
                         atendidos += cantidadAtendidos6;
+
+                        for (var i = 0; i < cantidadAtendidos6; i++)
+                        {
+                            esperaPromedio = acumuladorEspera.CalcularSiguiente((double)clienteSaliendo6.TiempoEspera());
+                        }
+
                         if (!colaLocal.Vacia())
                         {
                             var clienteEsperando = colaLocal.ProximoCliente();
@@ -391,6 +440,12 @@ namespace TP7
                         clienteSaliendo7.Salir(relojActual);
                         var cantidadAtendidos7 = mesas.Single(m => m.Mesa.Equals(mesa7)).Cantidad;
                         atendidos += cantidadAtendidos7;
+
+                        for (var i = 0; i < cantidadAtendidos7; i++)
+                        {
+                            esperaPromedio = acumuladorEspera.CalcularSiguiente((double)clienteSaliendo7.TiempoEspera());
+                        }
+
                         if (!colaLocal.Vacia())
                         {
                             var clienteEsperando = colaLocal.ProximoCliente();
@@ -405,6 +460,12 @@ namespace TP7
                         clienteSaliendo8.Salir(relojActual);
                         var cantidadAtendidos8 = mesas.Single(m => m.Mesa.Equals(mesa8)).Cantidad;
                         atendidos += cantidadAtendidos8;
+
+                        for (var i = 0; i < cantidadAtendidos8; i++)
+                        {
+                            esperaPromedio = acumuladorEspera.CalcularSiguiente((double)clienteSaliendo8.TiempoEspera());
+                        }
+
                         if (!colaLocal.Vacia())
                         {
                             var clienteEsperando = colaLocal.ProximoCliente();
@@ -419,6 +480,12 @@ namespace TP7
                         clienteSaliendo9.Salir(relojActual);
                         var cantidadAtendidos9 = mesas.Single(m => m.Mesa.Equals(mesa9)).Cantidad;
                         atendidos += cantidadAtendidos9;
+
+                        for (var i = 0; i < cantidadAtendidos9; i++)
+                        {
+                            esperaPromedio = acumuladorEspera.CalcularSiguiente((double)clienteSaliendo9.TiempoEspera());
+                        }
+
                         if (!colaLocal.Vacia())
                         {
                             var clienteEsperando = colaLocal.ProximoCliente();
@@ -433,6 +500,12 @@ namespace TP7
                         clienteSaliendo10.Salir(relojActual);
                         var cantidadAtendidos10 = mesas.Single(m => m.Mesa.Equals(mesa10)).Cantidad;
                         atendidos += cantidadAtendidos10;
+
+                        for (var i = 0; i < cantidadAtendidos10; i++)
+                        {
+                            esperaPromedio = acumuladorEspera.CalcularSiguiente((double)clienteSaliendo10.TiempoEspera());
+                        }
+
                         if (!colaLocal.Vacia())
                         {
                             var clienteEsperando = colaLocal.ProximoCliente();
@@ -453,10 +526,23 @@ namespace TP7
                         colaLocal.Vaciar();
                         break;
                 }
+                //agrego la fila del evento actual
+                if (simulacion >= inicio && simulacion <= fin)
+                    Invoke(filaInstance, relojActual, eventoActual, local, colaLocal, colaMozo, mozo,
+                        colaCocina, cocina, mesas, atendidos, perdidos, esperaPromedio, clientes);
+
+                //cada 10 eventos actualizo el status
+                if (simulacion % 10 == 0)
+                    Invoke(statusInstance, relojActual, simulacion);
             }
+            //muestro los resultados
+            Invoke(resultadosInstance, atendidos, perdidos, esperaPromedio);
+
+            //dejo el formulario como estaba
+            Invoke(inicioFinInstance, true);
         }
 
-        public void InicioFin(bool fin)
+        private void InicioFin(bool fin)
         {
             btn_simular.Enabled = fin;
 
@@ -466,7 +552,7 @@ namespace TP7
 
             dg_simulaciones.Rows.Clear();
             var cols = dg_simulaciones.Columns.Count;
-            for (var c = cols - 1; c >= 23; c--)
+            for (var c = cols - 1; c >= 33; c--)
             {
                 dg_simulaciones.Columns.RemoveAt(c);
             }
@@ -527,15 +613,15 @@ namespace TP7
             dg_simulaciones.Columns.AddRange(columns);
         }
 
-        private void AgregarFila(DateTime relojActual, string eventoActual, Llegada llegadas,
+        private void AgregarFila(DateTime relojActual, string eventoActual, Llegada local,
             ICola colaLocal, ICola colaMozo, Servidor mozo, ICola colaCocina, Servidor cocina,
-            List<Ocupacion> mesas, int atendidos, int noAtendidos, decimal esperaPromedio,
+            List<Ocupacion> mesas, int atendidos, int perdidos, decimal esperaPromedio,
             List<VectorCliente> clientes)
         {
             var row = dg_simulaciones.Rows.Add(
                             relojActual.ToString("HH:mm:ss"),
                             eventoActual,
-                            llegadas.ProximaLlegada?.ToString("HH:mm:ss"),
+                            local.ProximaLlegada?.ToString("HH:mm:ss"),
                             colaLocal.Cantidad(),
                             colaMozo.Cantidad(),
                             mozo.Estado,
@@ -544,7 +630,7 @@ namespace TP7
                             cocina.Estado,
                             cocina.ProximoFinAtencion?.ToString("HH:mm:ss"),
                             atendidos,
-                            noAtendidos,
+                            perdidos,
                             DateTimeConverter.DesdeMinutos(esperaPromedio)
                         );
 
@@ -552,42 +638,39 @@ namespace TP7
             {
                 var num = mesa.Mesa.Nombre.Split(' ')[1];
 
-                dg_simulaciones.Rows[row].Cells[$"estado_mesa_{num}"].Value = mesa.Mesa.Estado;
-                dg_simulaciones.Rows[row].Cells[$"estado_mesa_{num}"].Value = mesa.Mesa.Estado; //TODO: Próximo fin
+                dg_simulaciones.Rows[row].Cells[$"estado_mesa_{num}"].Value =
+                    mesa.EstaLibre() ? "Libre" : $"Ocupada por {mesa.Cliente.Nombre}";
+                dg_simulaciones.Rows[row].Cells[$"proximo_fin_mesa_{num}"].Value =
+                    mesa.Mesa.ProximoFinAtencion?.ToString("HH:mm:ss");
             }
 
-            /*foreach (var cliente in clientes)
+            foreach (var cliente in clientes)
             {
-                var num = cliente.Nombre.Split(' ')[1];
+                var num = cliente.Cliente.Nombre.Split(' ')[1];
 
-                dg_simulaciones.Rows[row].Cells[$"llegada_camion_{num}"].Value = cliente.HoraLlegada.ToString("HH:mm:ss");
-                dg_simulaciones.Rows[row].Cells[$"estado_camion_{num}"].Value = cliente.Estado;
-                dg_simulaciones.Rows[row].Cells[$"permanencia_camion_{num}"].Value = DateTimeConverter.DesdeMinutos(cliente.TiempoEnSistema);
-            }*/
+                dg_simulaciones.Rows[row].Cells[$"llegada_cliente_{num}"].Value =
+                    cliente.Cliente.HoraLlegada.ToString("HH:mm:ss");
+                dg_simulaciones.Rows[row].Cells[$"estado_cliente_{num}"].Value = cliente.Cliente.Estado;
+                dg_simulaciones.Rows[row].Cells[$"cantidad_cliente_{num}"].Value = cliente.Cantidad;
+                dg_simulaciones.Rows[row].Cells[$"mesa_cliente_{num}"].Value = cliente.Mesa;
+                dg_simulaciones.Rows[row].Cells[$"menu_cliente_{num}"].Value = cliente.Menu;
+                dg_simulaciones.Rows[row].Cells[$"espera_cliente_{num}"].Value =
+                    DateTimeConverter.DesdeMinutos(cliente.Cliente.TiempoEspera());
+            }
         }
 
-        /*private void ActualizarStatus(int dia, DateTime relojActual, int simulacion)
+        private void ActualizarStatus(DateTime relojActual, int simulacion)
         {
-            txt_dia.Text = dia.ToString();
             txt_hora.Text = relojActual.ToString("HH:mm:ss");
             txt_evento.Text = simulacion.ToString();
         }
 
-        private void MostrarResultados(decimal promedioAtendidos, decimal promedioNoAtendidos, decimal promedioPermanencia)
+        private void MostrarResultados(int atendidos, int perdidos, decimal esperaPromedio)
         {
-            if (rb_estrategia_a.Checked)
-            {
-                txt_atendidos_a.Text = Math.Round(promedioAtendidos, Decimales).ToString();
-                txt_no_atendidos_a.Text = Math.Round(promedioNoAtendidos, Decimales).ToString();
-                txt_permanencia_a.Text = DateTimeConverter.DesdeMinutos(promedioPermanencia);
-            }
-            else
-            {
-                txt_atendidos_b.Text = Math.Round(promedioAtendidos, Decimales).ToString();
-                txt_no_atendidos_b.Text = Math.Round(promedioNoAtendidos, Decimales).ToString();
-                txt_permanencia_b.Text = DateTimeConverter.DesdeMinutos(promedioPermanencia);
-            }
-        }*/
+            txt_atendidos.Text = atendidos.ToString();
+            txt_perdidos.Text = perdidos.ToString();
+            txt_espera_promedio.Text = DateTimeConverter.DesdeMinutos(esperaPromedio);
+        }
 
         private void btn_detener_Click(object sender, EventArgs e)
         {

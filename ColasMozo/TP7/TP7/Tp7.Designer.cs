@@ -94,15 +94,25 @@
             this.estado_cocina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proximo_fin_cocina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_mesa_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mesa_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_mesa_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mesa_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_mesa_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mesa_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_mesa_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mesa_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_mesa_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mesa_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_mesa_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mesa_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_mesa_7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mesa_7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_mesa_8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mesa_8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_mesa_9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mesa_9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_mesa_10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_fin_mesa_10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_atendidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_perdidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.espera_promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -211,15 +221,25 @@
             this.estado_cocina,
             this.proximo_fin_cocina,
             this.estado_mesa_1,
+            this.proximo_fin_mesa_1,
             this.estado_mesa_2,
+            this.proximo_fin_mesa_2,
             this.estado_mesa_3,
+            this.proximo_fin_mesa_3,
             this.estado_mesa_4,
+            this.proximo_fin_mesa_4,
             this.estado_mesa_5,
+            this.proximo_fin_mesa_5,
             this.estado_mesa_6,
+            this.proximo_fin_mesa_6,
             this.estado_mesa_7,
+            this.proximo_fin_mesa_7,
             this.estado_mesa_8,
+            this.proximo_fin_mesa_8,
             this.estado_mesa_9,
+            this.proximo_fin_mesa_9,
             this.estado_mesa_10,
+            this.proximo_fin_mesa_10,
             this.total_atendidos,
             this.total_perdidos,
             this.espera_promedio});
@@ -815,6 +835,17 @@
             this.estado_mesa_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.estado_mesa_1.Width = 140;
             // 
+            // proximo_fin_mesa_1
+            // 
+            this.proximo_fin_mesa_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mesa_1.FillWeight = 1F;
+            this.proximo_fin_mesa_1.HeaderText = "Próximo Fin Mesa 1";
+            this.proximo_fin_mesa_1.Name = "proximo_fin_mesa_1";
+            this.proximo_fin_mesa_1.ReadOnly = true;
+            this.proximo_fin_mesa_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mesa_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mesa_1.Width = 85;
+            // 
             // estado_mesa_2
             // 
             this.estado_mesa_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -825,6 +856,17 @@
             this.estado_mesa_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.estado_mesa_2.Width = 140;
+            // 
+            // proximo_fin_mesa_2
+            // 
+            this.proximo_fin_mesa_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mesa_2.FillWeight = 1F;
+            this.proximo_fin_mesa_2.HeaderText = "Próximo Fin Mesa 2";
+            this.proximo_fin_mesa_2.Name = "proximo_fin_mesa_2";
+            this.proximo_fin_mesa_2.ReadOnly = true;
+            this.proximo_fin_mesa_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mesa_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mesa_2.Width = 85;
             // 
             // estado_mesa_3
             // 
@@ -837,6 +879,17 @@
             this.estado_mesa_3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.estado_mesa_3.Width = 140;
             // 
+            // proximo_fin_mesa_3
+            // 
+            this.proximo_fin_mesa_3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mesa_3.FillWeight = 1F;
+            this.proximo_fin_mesa_3.HeaderText = "Próximo Fin Mesa 3";
+            this.proximo_fin_mesa_3.Name = "proximo_fin_mesa_3";
+            this.proximo_fin_mesa_3.ReadOnly = true;
+            this.proximo_fin_mesa_3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mesa_3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mesa_3.Width = 85;
+            // 
             // estado_mesa_4
             // 
             this.estado_mesa_4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -847,6 +900,17 @@
             this.estado_mesa_4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.estado_mesa_4.Width = 140;
+            // 
+            // proximo_fin_mesa_4
+            // 
+            this.proximo_fin_mesa_4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mesa_4.FillWeight = 1F;
+            this.proximo_fin_mesa_4.HeaderText = "Próximo Fin Mesa 4";
+            this.proximo_fin_mesa_4.Name = "proximo_fin_mesa_4";
+            this.proximo_fin_mesa_4.ReadOnly = true;
+            this.proximo_fin_mesa_4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mesa_4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mesa_4.Width = 85;
             // 
             // estado_mesa_5
             // 
@@ -859,6 +923,17 @@
             this.estado_mesa_5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.estado_mesa_5.Width = 140;
             // 
+            // proximo_fin_mesa_5
+            // 
+            this.proximo_fin_mesa_5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mesa_5.FillWeight = 1F;
+            this.proximo_fin_mesa_5.HeaderText = "Próximo Fin Mesa 5";
+            this.proximo_fin_mesa_5.Name = "proximo_fin_mesa_5";
+            this.proximo_fin_mesa_5.ReadOnly = true;
+            this.proximo_fin_mesa_5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mesa_5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mesa_5.Width = 85;
+            // 
             // estado_mesa_6
             // 
             this.estado_mesa_6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -869,6 +944,17 @@
             this.estado_mesa_6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.estado_mesa_6.Width = 140;
+            // 
+            // proximo_fin_mesa_6
+            // 
+            this.proximo_fin_mesa_6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mesa_6.FillWeight = 1F;
+            this.proximo_fin_mesa_6.HeaderText = "Próximo Fin Mesa 6";
+            this.proximo_fin_mesa_6.Name = "proximo_fin_mesa_6";
+            this.proximo_fin_mesa_6.ReadOnly = true;
+            this.proximo_fin_mesa_6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mesa_6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mesa_6.Width = 85;
             // 
             // estado_mesa_7
             // 
@@ -881,6 +967,17 @@
             this.estado_mesa_7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.estado_mesa_7.Width = 140;
             // 
+            // proximo_fin_mesa_7
+            // 
+            this.proximo_fin_mesa_7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mesa_7.FillWeight = 1F;
+            this.proximo_fin_mesa_7.HeaderText = "Próximo Fin Mesa 7";
+            this.proximo_fin_mesa_7.Name = "proximo_fin_mesa_7";
+            this.proximo_fin_mesa_7.ReadOnly = true;
+            this.proximo_fin_mesa_7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mesa_7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mesa_7.Width = 85;
+            // 
             // estado_mesa_8
             // 
             this.estado_mesa_8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -891,6 +988,17 @@
             this.estado_mesa_8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.estado_mesa_8.Width = 140;
+            // 
+            // proximo_fin_mesa_8
+            // 
+            this.proximo_fin_mesa_8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mesa_8.FillWeight = 1F;
+            this.proximo_fin_mesa_8.HeaderText = "Próximo Fin Mesa 8";
+            this.proximo_fin_mesa_8.Name = "proximo_fin_mesa_8";
+            this.proximo_fin_mesa_8.ReadOnly = true;
+            this.proximo_fin_mesa_8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mesa_8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mesa_8.Width = 85;
             // 
             // estado_mesa_9
             // 
@@ -903,6 +1011,17 @@
             this.estado_mesa_9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.estado_mesa_9.Width = 140;
             // 
+            // proximo_fin_mesa_9
+            // 
+            this.proximo_fin_mesa_9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mesa_9.FillWeight = 1F;
+            this.proximo_fin_mesa_9.HeaderText = "Próximo Fin Mesa 9";
+            this.proximo_fin_mesa_9.Name = "proximo_fin_mesa_9";
+            this.proximo_fin_mesa_9.ReadOnly = true;
+            this.proximo_fin_mesa_9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mesa_9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mesa_9.Width = 85;
+            // 
             // estado_mesa_10
             // 
             this.estado_mesa_10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -913,6 +1032,17 @@
             this.estado_mesa_10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.estado_mesa_10.Width = 140;
+            // 
+            // proximo_fin_mesa_10
+            // 
+            this.proximo_fin_mesa_10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.proximo_fin_mesa_10.FillWeight = 1F;
+            this.proximo_fin_mesa_10.HeaderText = "Próximo Fin Mesa 10";
+            this.proximo_fin_mesa_10.Name = "proximo_fin_mesa_10";
+            this.proximo_fin_mesa_10.ReadOnly = true;
+            this.proximo_fin_mesa_10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.proximo_fin_mesa_10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.proximo_fin_mesa_10.Width = 85;
             // 
             // total_atendidos
             // 
@@ -1057,15 +1187,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_cocina;
         private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_cocina;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mesa_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mesa_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mesa_3;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mesa_4;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mesa_5;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mesa_6;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mesa_7;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mesa_8;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mesa_9;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_mesa_10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proximo_fin_mesa_10;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_atendidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_perdidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn espera_promedio;
