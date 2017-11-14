@@ -144,6 +144,7 @@
             // txt_evento
             // 
             this.txt_evento.CausesValidation = false;
+            this.txt_evento.Enabled = false;
             this.txt_evento.Location = new System.Drawing.Point(111, 52);
             this.txt_evento.Name = "txt_evento";
             this.txt_evento.ReadOnly = true;
@@ -153,6 +154,7 @@
             // txt_hora
             // 
             this.txt_hora.CausesValidation = false;
+            this.txt_hora.Enabled = false;
             this.txt_hora.Location = new System.Drawing.Point(21, 52);
             this.txt_hora.Name = "txt_hora";
             this.txt_hora.ReadOnly = true;
@@ -263,7 +265,6 @@
             // 
             // btn_simular
             // 
-            this.btn_simular.Enabled = false;
             this.btn_simular.Location = new System.Drawing.Point(870, 28);
             this.btn_simular.Name = "btn_simular";
             this.btn_simular.Size = new System.Drawing.Size(75, 23);
@@ -734,7 +735,7 @@
             this.evento.ReadOnly = true;
             this.evento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.evento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.evento.Width = 80;
+            this.evento.Width = 60;
             // 
             // proxima_llegada
             // 
@@ -756,7 +757,7 @@
             this.cola_local.ReadOnly = true;
             this.cola_local.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cola_local.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cola_local.Width = 70;
+            this.cola_local.Width = 40;
             // 
             // cola_mozo
             // 
@@ -767,7 +768,7 @@
             this.cola_mozo.ReadOnly = true;
             this.cola_mozo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cola_mozo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cola_mozo.Width = 70;
+            this.cola_mozo.Width = 40;
             // 
             // estado_mozo
             // 
@@ -778,7 +779,7 @@
             this.estado_mozo.ReadOnly = true;
             this.estado_mozo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mozo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mozo.Width = 140;
+            this.estado_mozo.Width = 120;
             // 
             // proximo_fin_mozo
             // 
@@ -789,7 +790,7 @@
             this.proximo_fin_mozo.ReadOnly = true;
             this.proximo_fin_mozo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mozo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mozo.Width = 85;
+            this.proximo_fin_mozo.Width = 75;
             // 
             // cola_cocina
             // 
@@ -800,7 +801,7 @@
             this.cola_cocina.ReadOnly = true;
             this.cola_cocina.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cola_cocina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cola_cocina.Width = 60;
+            this.cola_cocina.Width = 55;
             // 
             // estado_cocina
             // 
@@ -811,7 +812,7 @@
             this.estado_cocina.ReadOnly = true;
             this.estado_cocina.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_cocina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_cocina.Width = 140;
+            this.estado_cocina.Width = 120;
             // 
             // proximo_fin_cocina
             // 
@@ -822,7 +823,7 @@
             this.proximo_fin_cocina.ReadOnly = true;
             this.proximo_fin_cocina.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_cocina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_cocina.Width = 85;
+            this.proximo_fin_cocina.Width = 75;
             // 
             // estado_mesa_1
             // 
@@ -833,7 +834,7 @@
             this.estado_mesa_1.ReadOnly = true;
             this.estado_mesa_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mesa_1.Width = 140;
+            this.estado_mesa_1.Width = 120;
             // 
             // proximo_fin_mesa_1
             // 
@@ -844,7 +845,7 @@
             this.proximo_fin_mesa_1.ReadOnly = true;
             this.proximo_fin_mesa_1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mesa_1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mesa_1.Width = 85;
+            this.proximo_fin_mesa_1.Width = 75;
             // 
             // estado_mesa_2
             // 
@@ -855,7 +856,7 @@
             this.estado_mesa_2.ReadOnly = true;
             this.estado_mesa_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mesa_2.Width = 140;
+            this.estado_mesa_2.Width = 120;
             // 
             // proximo_fin_mesa_2
             // 
@@ -866,7 +867,7 @@
             this.proximo_fin_mesa_2.ReadOnly = true;
             this.proximo_fin_mesa_2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mesa_2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mesa_2.Width = 85;
+            this.proximo_fin_mesa_2.Width = 75;
             // 
             // estado_mesa_3
             // 
@@ -877,7 +878,7 @@
             this.estado_mesa_3.ReadOnly = true;
             this.estado_mesa_3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mesa_3.Width = 140;
+            this.estado_mesa_3.Width = 120;
             // 
             // proximo_fin_mesa_3
             // 
@@ -888,7 +889,7 @@
             this.proximo_fin_mesa_3.ReadOnly = true;
             this.proximo_fin_mesa_3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mesa_3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mesa_3.Width = 85;
+            this.proximo_fin_mesa_3.Width = 75;
             // 
             // estado_mesa_4
             // 
@@ -899,7 +900,7 @@
             this.estado_mesa_4.ReadOnly = true;
             this.estado_mesa_4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mesa_4.Width = 140;
+            this.estado_mesa_4.Width = 120;
             // 
             // proximo_fin_mesa_4
             // 
@@ -910,7 +911,7 @@
             this.proximo_fin_mesa_4.ReadOnly = true;
             this.proximo_fin_mesa_4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mesa_4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mesa_4.Width = 85;
+            this.proximo_fin_mesa_4.Width = 75;
             // 
             // estado_mesa_5
             // 
@@ -921,7 +922,7 @@
             this.estado_mesa_5.ReadOnly = true;
             this.estado_mesa_5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mesa_5.Width = 140;
+            this.estado_mesa_5.Width = 120;
             // 
             // proximo_fin_mesa_5
             // 
@@ -932,7 +933,7 @@
             this.proximo_fin_mesa_5.ReadOnly = true;
             this.proximo_fin_mesa_5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mesa_5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mesa_5.Width = 85;
+            this.proximo_fin_mesa_5.Width = 75;
             // 
             // estado_mesa_6
             // 
@@ -943,7 +944,7 @@
             this.estado_mesa_6.ReadOnly = true;
             this.estado_mesa_6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mesa_6.Width = 140;
+            this.estado_mesa_6.Width = 120;
             // 
             // proximo_fin_mesa_6
             // 
@@ -954,7 +955,7 @@
             this.proximo_fin_mesa_6.ReadOnly = true;
             this.proximo_fin_mesa_6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mesa_6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mesa_6.Width = 85;
+            this.proximo_fin_mesa_6.Width = 75;
             // 
             // estado_mesa_7
             // 
@@ -965,7 +966,7 @@
             this.estado_mesa_7.ReadOnly = true;
             this.estado_mesa_7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mesa_7.Width = 140;
+            this.estado_mesa_7.Width = 120;
             // 
             // proximo_fin_mesa_7
             // 
@@ -976,7 +977,7 @@
             this.proximo_fin_mesa_7.ReadOnly = true;
             this.proximo_fin_mesa_7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mesa_7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mesa_7.Width = 85;
+            this.proximo_fin_mesa_7.Width = 75;
             // 
             // estado_mesa_8
             // 
@@ -987,7 +988,7 @@
             this.estado_mesa_8.ReadOnly = true;
             this.estado_mesa_8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mesa_8.Width = 140;
+            this.estado_mesa_8.Width = 120;
             // 
             // proximo_fin_mesa_8
             // 
@@ -998,7 +999,7 @@
             this.proximo_fin_mesa_8.ReadOnly = true;
             this.proximo_fin_mesa_8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mesa_8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mesa_8.Width = 85;
+            this.proximo_fin_mesa_8.Width = 75;
             // 
             // estado_mesa_9
             // 
@@ -1009,7 +1010,7 @@
             this.estado_mesa_9.ReadOnly = true;
             this.estado_mesa_9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mesa_9.Width = 140;
+            this.estado_mesa_9.Width = 120;
             // 
             // proximo_fin_mesa_9
             // 
@@ -1020,7 +1021,7 @@
             this.proximo_fin_mesa_9.ReadOnly = true;
             this.proximo_fin_mesa_9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mesa_9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mesa_9.Width = 85;
+            this.proximo_fin_mesa_9.Width = 75;
             // 
             // estado_mesa_10
             // 
@@ -1031,7 +1032,7 @@
             this.estado_mesa_10.ReadOnly = true;
             this.estado_mesa_10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado_mesa_10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado_mesa_10.Width = 140;
+            this.estado_mesa_10.Width = 120;
             // 
             // proximo_fin_mesa_10
             // 
@@ -1042,7 +1043,7 @@
             this.proximo_fin_mesa_10.ReadOnly = true;
             this.proximo_fin_mesa_10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.proximo_fin_mesa_10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.proximo_fin_mesa_10.Width = 85;
+            this.proximo_fin_mesa_10.Width = 75;
             // 
             // total_atendidos
             // 

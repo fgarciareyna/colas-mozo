@@ -9,6 +9,7 @@ namespace TP7
         public Ocupacion(Servidor mesa)
         {
             Mesa = mesa;
+            Cantidad = 0;
         }
 
         public bool EstaLibre()
@@ -32,6 +33,7 @@ namespace TP7
 
             var clienteActual = Cliente;
             Cliente = null;
+            Cantidad = 0;
             return clienteActual;
         }
 

@@ -8,10 +8,10 @@ namespace Montecarlo.Acumuladores
         public PromedioCantidadFija(int cantidad)
         {
             Cantidad = cantidad;
-            Valores = new List<double>();
+            Valores = new List<decimal>();
         }
 
-        public double CalcularSiguiente(double valor)
+        public decimal CalcularSiguiente(decimal valor)
         {
             if (Valores.Count == Cantidad)
                 EliminarPrimero();
@@ -29,6 +29,6 @@ namespace Montecarlo.Acumuladores
         }
 
         private int Cantidad { get; }
-        private IList<double> Valores { get; }
+        private IList<decimal> Valores { get; }
     }
 }

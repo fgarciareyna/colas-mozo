@@ -8,12 +8,16 @@ namespace Colas.Clientes
         {
             Nombre = nombre;
             TiempoAtencion = 0;
+            TiempoEspera = 0;
+            TiempoEnSistema = 0;
         }
         public Cliente(string nombre, int prioridad)
         {
             Nombre = nombre;
             Prioridad = prioridad;
             TiempoAtencion = 0;
+            TiempoEspera = 0;
+            TiempoEnSistema = 0;
         }
 
         public void Llegar(DateTime horaLlegada)
@@ -26,6 +30,7 @@ namespace Colas.Clientes
         {
             HoraInicioAtencion = horaInicioAtencion;
             Estado = $"En {servidor}";
+            ActualizarTiempos(horaInicioAtencion);
         }
 
         public void FinalizarAtencion(DateTime horaFinAtencion)
@@ -34,6 +39,7 @@ namespace Colas.Clientes
             var finAtencion = DateTimeConverter.EnMinutos(horaFinAtencion);
 
             TiempoAtencion += finAtencion - inicioAtencion;
+            ActualizarTiempos(horaFinAtencion);
         }
 
         public void AgregarACola(string nombre)
@@ -48,23 +54,24 @@ namespace Colas.Clientes
 
         public void Salir(DateTime horaSalida)
         {
-            var ingreso = DateTimeConverter.EnMinutos(HoraLlegada);
-            var salida = DateTimeConverter.EnMinutos(horaSalida);
-
-            TiempoEnSistema = salida - ingreso;
-
-            if (horaSalida.Date > HoraLlegada.Date)
-            {
-                var dias = horaSalida.Day - HoraLlegada.Day;
-                TiempoEnSistema += dias * 24 * 60;
-            }
+            ActualizarTiempos(horaSalida);
 
             Estado = "Saliendo";
         }
 
-        public decimal TiempoEspera()
+        private void ActualizarTiempos(DateTime horaActual)
         {
-            return TiempoEnSistema - TiempoAtencion;
+            var ingreso = DateTimeConverter.EnMinutos(HoraLlegada);
+            var ahora = DateTimeConverter.EnMinutos(horaActual);
+
+            TiempoEnSistema = ahora - ingreso;
+
+            if (horaActual.Date > HoraLlegada.Date)
+            {
+                var dias = horaActual.Day - HoraLlegada.Day;
+                TiempoEnSistema += dias * 24 * 60;
+            }
+            TiempoEspera = TiempoEnSistema - TiempoAtencion;
         }
         
         public string Nombre { get; protected set; }
@@ -72,6 +79,7 @@ namespace Colas.Clientes
         public DateTime HoraLlegada { get; protected set; }
         public DateTime HoraInicioAtencion { get; protected set; }
         public string Estado { get; protected set; }
+        public decimal TiempoEspera { get; protected set; }
         public decimal TiempoAtencion { get; protected set; }
         public decimal TiempoEnSistema { get; protected set; }
     }
