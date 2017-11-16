@@ -59,6 +59,11 @@ namespace Colas.Clientes
             Estado = "Saliendo";
         }
 
+        public void AgregarSubestado(string subestado)
+        {
+            Estado += $" ({subestado})";
+        }
+
         private void ActualizarTiempos(DateTime horaActual)
         {
             var ingreso = DateTimeConverter.EnMinutos(HoraLlegada);

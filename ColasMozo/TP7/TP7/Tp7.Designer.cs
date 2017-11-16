@@ -735,7 +735,7 @@
             this.evento.ReadOnly = true;
             this.evento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.evento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.evento.Width = 60;
+            this.evento.Width = 95;
             // 
             // proxima_llegada
             // 

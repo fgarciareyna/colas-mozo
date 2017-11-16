@@ -304,11 +304,13 @@ namespace TP7
                             {
                                 clientes.Single(c => c.Cliente.Equals(clienteAtendido))
                                     .Menu = $"Menu {pedido}";
+                                eventoActual += " (Carta)";
                             }
                         }
                         else
                         {
                             mesa.Mesa.LlegadaCliente(relojActual, clienteAtendido);
+                            eventoActual += " (Pedido)";
                         }
                         break;
 
@@ -672,6 +674,13 @@ namespace TP7
             foreach (var cliente in clientes)
             {
                 var num = cliente.Cliente.Nombre.Split(' ')[1];
+
+                if (cliente.Cliente.Estado.Equals("En mozo"))
+                {
+                    var subestado = cliente.Cliente.Prioridad == 1 ? "Carta" : "Pedido";
+
+                    cliente.Cliente.AgregarSubestado(subestado);
+                }
 
                 dg_simulaciones.Rows[row].Cells[$"llegada_cliente_{num}"].Value =
                     cliente.Cliente.HoraLlegada.ToString("HH:mm:ss");
